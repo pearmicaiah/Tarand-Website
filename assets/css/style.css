@@ -324,9 +324,133 @@ h1 {
         gap: 1rem;
     }
 
-    .bento-item {
-        grid-column: span 1 !important;
-        grid-row: span 1 !important;
-        min-height: 120px;
+    /* Sector Sections */
+    .sector-section {
+        min-height: 100vh;
+        padding: 10rem 3rem 5rem 3rem;
+        position: relative;
+        z-index: 10;
     }
-}
+
+    .sector-header {
+        margin-bottom: 5rem;
+        max-width: 800px;
+    }
+
+    .sector-label {
+        display: block;
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        letter-spacing: 0.1em;
+        opacity: 0.6;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .sector-title {
+        font-family: var(--font-heading);
+        font-size: 4rem;
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+        color: var(--color-light);
+        /* Will be overridden by JS interaction potentially */
+    }
+
+    /* Specific Sector Theme Overrides */
+    [data-sector="energy"] .sector-title {
+        color: var(--theme-energy);
+        text-shadow: 0 0 30px rgba(229, 185, 70, 0.3);
+    }
+
+    .sector-desc {
+        font-size: 1.5rem;
+        line-height: 1.4;
+        max-width: 600px;
+        opacity: 0.9;
+        font-weight: 300;
+    }
+
+    /* Subsidiary Grid */
+    .subsidiary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .subsidiary-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        overflow: hidden;
+        transition: transform 0.3s var(--ease-smooth), border-color 0.3s;
+        cursor: pointer;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .subsidiary-card:hover {
+        border-color: var(--theme-energy);
+        /* Dynamic based on parent sector? For now hardcoded or use JS */
+        transform: translateY(-10px);
+    }
+
+    [data-sector="energy"] .subsidiary-card:hover {
+        /* CSS-only theme aware hover */
+        border-color: var(--theme-energy);
+    }
+
+    .card-visual {
+        flex: 1;
+        background: #000;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Visual Placeholders - In real build, these would be images/video */
+    .visual-fuel {
+        background: linear-gradient(45deg, #111, #333);
+    }
+
+    .visual-gas {
+        background: radial-gradient(circle, #222, #000);
+    }
+
+    .visual-solar {
+        background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 10px, #222 10px, #222 20px);
+    }
+
+    .card-content {
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
+    }
+
+    .card-content h3 {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-content p {
+        font-size: 0.9rem;
+        opacity: 0.7;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-link {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: inherit;
+        opacity: 0.5;
+        transition: opacity 0.3s;
+    }
+
+    .subsidiary-card:hover .card-link {
+        opacity: 1;
+        color: var(--theme-energy);
+    }

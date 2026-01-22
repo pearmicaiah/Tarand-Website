@@ -1,0 +1,261 @@
+/* 1:1 Mirror Styles for Innscor Africa */
+
+:root {
+    --innscor-primary: rgb(6, 32, 93);
+    --innscor-text-dark: rgb(50, 56, 63);
+    --innscor-yellow: #EAB308;
+    /* Keeping the yellow for accents as seen in specific buttons */
+    --innscor-white: rgb(255, 255, 255);
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+    --transition-standard: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    /* Adjusted for standard corporate legibility */
+    line-height: 1.5;
+    color: var(--innscor-text-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    overflow-x: hidden;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading) !important;
+    color: var(--innscor-primary);
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+/* Header & Nav */
+/* Header Tiers with Mirror Gradients */
+#main-header {
+    background: transparent;
+    z-index: 1000;
+}
+
+.header-top-tier {
+    background: linear-gradient(to right, #011E4B, #014B92);
+    transition: all 0.4s ease;
+}
+
+.header-nav-bar {
+    background: #011E4B;
+    transition: all 0.4s ease;
+}
+
+#main-header.scrolled .header-top-tier {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+}
+
+#main-header.scrolled .header-logo-tier {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo-tier {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.nav-link.active {
+    position: relative;
+    color: var(--innscor-yellow) !important;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 4px;
+    background: #00AEEF;
+    /* Light blue active highlight */
+}
+
+/* Mega Menu Tab Styles */
+.mega-tab-btn.active {
+    background: #fff;
+    color: #00AEEF;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+#main-header.scrolled {
+    background: var(--innscor-primary);
+    height: 80px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Off-canvas Menu Styles (White Theme) */
+#off-canvas-nav {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    /* Wider for desktop mirror */
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background: #fff;
+    z-index: 100;
+    transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+}
+
+#off-canvas-nav.active {
+    right: 0;
+}
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-standard);
+    z-index: 90;
+    backdrop-filter: blur(5px);
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hero Section with Video Overlay */
+.hero-wrapper {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.hero-video-bg iframe {
+    width: 100vw;
+    height: 56.25vw;
+    /* 16:9 ratio */
+    min-height: 100vh;
+    min-width: 177.77vh;
+    /* 16:9 ratio */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10%;
+    color: var(--innscor-white);
+    background: rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-in.active {
+    opacity: 1;
+}
+
+/* Brands Scroll */
+.brands-marquee {
+    display: flex;
+    width: 200%;
+    animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Financial Highlighs Bar Shadow Overlap */
+.bg-metric-blue {
+    background-color: #B8C6D1;
+}
+
+/* Leaf Shape Border Radius - More Aggressive */
+.leaf-card {
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.leaf-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Logos Grid Hover */
+.grid div:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--innscor-primary);
+}

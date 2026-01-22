@@ -15,14 +15,9 @@
             theme: {
                 extend: {
                     colors: {
-                        'innscor-blue': '#06205D', /* Default Blue */
-                        'innscor-text': '#32383F',
-                        'innscor-yellow': '#F9B41B', /* Default Gold */
-                        'tarand-primary': '#06205D',
-                        'tarand-secondary': '#F9B41B',
-                    },
-                    backgroundImage: {
-                        'tarand-gradient': 'linear-gradient(135deg, #06205D 0%, #00509E 100%)', /* Placeholder Blue Gradient */
+                        'innscor-blue': 'rgb(6, 32, 93)',
+                        'innscor-text': 'rgb(50, 56, 63)',
+                        'innscor-yellow': '#F9B41B',
                     },
                     fontFamily: {
                         'montserrat': ['Montserrat', 'sans-serif'],
@@ -41,7 +36,7 @@
     <nav id="off-canvas-nav" class="bg-white text-innscor-text shadow-2xl transition-all duration-500">
         <div class="p-10">
             <div class="flex justify-between items-center mb-12">
-                <img src="assets/header_logo.png" alt="Logo" class="h-10">
+                <img src="assets/mobile-menu_logo.webp" alt="Logo" class="h-10">
                 <button id="close-menu"
                     class="text-3xl text-innscor-blue hover:text-innscor-yellow transition-colors"><i
                         class="fas fa-times"></i></button>
@@ -84,7 +79,7 @@
                 class="container mx-auto px-6 flex justify-between items-center text-[11px] font-semibold text-white/80 uppercase tracking-widest">
                 <div class="flex items-center space-x-6">
                     <a href="#" class="hover:text-white transition-colors">Sustainability</a>
-                    <a href="#" class="hover:text-white transition-colors">Subsidiaries</a>
+                    <a href="#" class="hover:text-white transition-colors">Company Websites</a>
                     <a href="#" class="hover:text-white transition-colors">Investor Tools</a>
                 </div>
                 <div class="flex items-center space-x-6">
@@ -95,7 +90,7 @@
                         <i
                             class="fas fa-search absolute right-2 top-1/2 -translate-y-1/2 text-white/50 text-[10px]"></i>
                     </div>
-                    <a href="#" class="hover:text-white transition-colors">TARAND.vx</a>
+                    <a href="#" class="hover:text-white transition-colors">INN.vx</a>
                 </div>
             </div>
         </div>
@@ -104,7 +99,7 @@
         <div class="header-logo-tier py-6 bg-white shadow-sm transition-all duration-300">
             <div class="container mx-auto px-6 flex justify-between items-center">
                 <div class="logo">
-                    <a href="#"><img src="assets/header_logo.png" alt="Tarand Logo"
+                    <a href="#"><img src="assets/header_logo.png" alt="Innscor Logo"
                             class="h-12 md:h-16 transition-all duration-300"></a>
                 </div>
                 <button id="open-menu" class="lg:hidden text-innscor-blue text-2xl"><i class="fas fa-bars"></i></button>
@@ -115,7 +110,7 @@
         <nav class="header-nav-bar bg-[#011E4B] border-b border-white/10 hidden lg:block">
             <div class="container mx-auto px-6 relative">
                 <ul
-                    class="flex items-center space-x-8 justify-center text-[13px] font-semibold text-white uppercase tracking-wider">
+                    class="flex items-center space-x-1 justify-start text-[13px] font-semibold text-white uppercase tracking-wider">
                     <li class="relative group">
                         <a href="#"
                             class="nav-link active py-4 px-4 block hover:text-innscor-yellow transition-colors">Home</a>
@@ -123,121 +118,136 @@
                     <li class="relative group">
                         <a href="#"
                             class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors flex items-center">
-                            Who We Are <i class="fas fa-chevron-down ml-2 text-[10px]"></i>
+                            About Us <i class="fas fa-chevron-down ml-2 text-[10px]"></i>
                         </a>
                     </li>
                     <li class="group static has-mega-menu">
                         <a href="#"
                             class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors flex items-center">
-                            Our Sectors <i class="fas fa-chevron-down ml-2 text-[10px]"></i>
+                            Our Brands <i class="fas fa-chevron-down ml-2 text-[10px]"></i>
                         </a>
                         <!-- Mega Menu Container -->
                         <div
                             class="mega-menu-container absolute left-0 right-0 top-full bg-white shadow-2xl rounded-b-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-innscor-text overflow-hidden">
-                            <div class="flex h-[500px]">
+                            <div class="flex h-[450px]">
                                 <!-- Left Sidebar: Vertical Tabs -->
-                                <div class="w-1/4 border-r border-gray-100 bg-gray-50/50 p-8 space-y-2 overflow-y-auto">
+                                <div class="w-1/4 border-r border-gray-100 bg-gray-50/50 p-8 space-y-4">
                                     <button
                                         class="mega-tab-btn active w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="energy">Energy & Power</button>
+                                        data-tab="mill-bake">Mill Bake</button>
                                     <button
                                         class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="food">Food Security</button>
+                                        data-tab="protein">Protein</button>
                                     <button
                                         class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="mining">Mining</button>
-                                    <button
-                                        class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="retail">Retail</button>
-                                    <button
-                                        class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="logistics">Logistics</button>
+                                        data-tab="beverages">Rutanhi Beverages</button>
                                     <button
                                         class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all"
-                                        data-tab="creative">Creative</button>
+                                        data-tab="other">Other</button>
                                 </div>
                                 <!-- Right Content Panel -->
-                                <div class="w-3/4 p-10 relative overflow-hidden bg-white">
+                                <div class="w-3/4 p-10 relative overflow-hidden">
+                                    <div class="mega-content-bg absolute inset-0 opacity-10 pointer-events-none">
+                                        <img src="assets/mill-bake-bg-4.webp" alt="" class="w-full h-full object-cover">
+                                    </div>
+                                    <div class="relative z-10">
+                                        <!-- Mill-Bake -->
+                                        <div id="tab-content-mill-bake"
+                                            class="mega-tab-content active h-full flex flex-col justify-center animate-fade-in">
+                                            <h3 class="text-3xl font-bold text-innscor-blue mb-2">Mill-Bake</h3>
+                                            <div class="w-20 h-1 bg-innscor-blue mb-8"></div>
+                                            <div class="grid grid-cols-4 gap-8 items-center">
+                                                <img src="assets/ProBake-Logo.png" alt="Baker's Inn"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/Natv-Logo.png" alt="National Foods"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/ProFeeds-Logo.png" alt="ProFeeds"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/Nutrimaster-Logo.png" alt="Nutrimaster"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                            </div>
+                                        </div>
 
-                                    <!-- Energy -->
-                                    <div id="tab-content-energy"
-                                        class="mega-tab-content active h-full flex flex-col justify-center animate-fade-in">
-                                        <h3 class="text-3xl font-bold text-innscor-blue mb-2">Energy & Power</h3>
-                                        <div class="w-20 h-1 bg-innscor-yellow mb-8"></div>
-                                        <div class="grid grid-cols-3 gap-6">
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Global Energies</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Fuel Distribution</p>
+                                        <!-- Protein -->
+                                        <div id="tab-content-protein"
+                                            class="mega-tab-content hidden h-full flex flex-col justify-center animate-fade-in">
+                                            <h3 class="text-3xl font-bold text-innscor-blue mb-2">Protein</h3>
+                                            <div class="w-20 h-1 bg-innscor-blue mb-8"></div>
+                                            <div class="grid grid-cols-4 gap-8 items-center">
+                                                <img src="assets/Colcom-Logo.png" alt="Colcom"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/irvineLogo.png" alt="Irvine's"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/Texas-Meats-Logo.png" alt="Texas Meats"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/Zimnyama-Logo.png" alt="Zimnyama"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/CCC-Pigs-Logo.png" alt="Triple C"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
                                             </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Flora Gas</h4>
-                                                <p class="text-xs text-gray-500 mt-1">LPG Supply</p>
+                                        </div>
+
+                                        <!-- Beverages -->
+                                        <div id="tab-content-beverages"
+                                            class="mega-tab-content hidden h-full flex flex-col justify-center animate-fade-in">
+                                            <h3 class="text-3xl font-bold text-innscor-blue mb-2">Rutanhi Beverages</h3>
+                                            <div class="w-20 h-1 bg-innscor-blue mb-8"></div>
+                                            <div class="grid grid-cols-4 gap-8 items-center">
+                                                <img src="assets/prodairy.webp" alt="Prodairy"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/mafuro.webp" alt="Mafuro Farming"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/probottlers.webp" alt="Probottlers"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/tbbc.webp" alt="The Buffalo Brewing Co"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
                                             </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Flora Solar</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Renewable Tech</p>
+                                        </div>
+
+                                        <!-- Other -->
+                                        <div id="tab-content-other"
+                                            class="mega-tab-content hidden h-full flex flex-col justify-center animate-fade-in">
+                                            <h3 class="text-3xl font-bold text-innscor-blue mb-2">Other Businesses</h3>
+                                            <div class="w-20 h-1 bg-innscor-blue mb-8"></div>
+                                            <div class="grid grid-cols-4 gap-8 items-center">
+                                                <img src="assets/natpak.webp" alt="Natpak"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/probrands.webp" alt="Probrands"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/mycash.webp" alt="MyCash"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
+                                                <img src="assets/phi.webp" alt="PHI Farming"
+                                                    class="h-16 object-contain hover:scale-105 transition-transform">
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Food -->
-                                    <div id="tab-content-food"
-                                        class="mega-tab-content hidden h-full flex flex-col justify-center animate-fade-in">
-                                        <h3 class="text-3xl font-bold text-innscor-blue mb-2">Manufacturing & Agro</h3>
-                                        <div class="w-20 h-1 bg-innscor-yellow mb-8"></div>
-                                        <div class="grid grid-cols-3 gap-6">
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Granite Haven Bakery</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Industrial Baking</p>
-                                            </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Ecomatt Foods</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Milling</p>
-                                            </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Ecomatt Farm</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Integrated Farming</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Mining -->
-                                    <div id="tab-content-mining"
-                                        class="mega-tab-content hidden h-full flex flex-col justify-center animate-fade-in">
-                                        <h3 class="text-3xl font-bold text-innscor-blue mb-2">Mining & Infrastructure
-                                        </h3>
-                                        <div class="w-20 h-1 bg-innscor-yellow mb-8"></div>
-                                        <div class="grid grid-cols-3 gap-6">
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Continental Treasures</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Gold & Minerals</p>
-                                            </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">GH Engineering</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Civil Works</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
                     </li>
                     <li class="relative group">
                         <a href="#"
-                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors">Investors</a>
+                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors flex items-center">
+                            Press & Investors <i class="fas fa-chevron-down ml-2 text-[10px]"></i>
+                        </a>
+                    </li>
+                    <li class="relative group">
+                        <a href="#" class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors">Empower
+                            Tomorrow</a>
                     </li>
                     <li class="relative group">
                         <a href="#"
-                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors">Media</a>
+                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors flex items-center">
+                            Media <i class="fas fa-chevron-down ml-2 text-[10px]"></i>
+                        </a>
+                    </li>
+                    <li class="relative group">
+                        <a href="#"
+                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors">Careers</a>
+                    </li>
+                    <li class="relative group">
+                        <a href="#"
+                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -246,29 +256,32 @@
 
     <main>
         <!-- Mirror Hero Section -->
-        <section class="hero-wrapper relative h-screen">
-            <!-- WebGL Container Injection -->
-            <div id="hero-canvas" class="absolute inset-0 z-0"></div>
-
-            <div class="hero-video-bg opacity-40">
+        <section class="hero-wrapper">
+            <div class="hero-video-bg">
                 <iframe
                     src="https://player.vimeo.com/video/1086900469?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
                     frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
             </div>
-            <div class="hero-content text-center items-center reveal relative z-10 flex flex-col justify-center h-full">
+            <div class="absolute inset-0 z-10 bg-black/40"></div>
+            <div class="hero-content text-center items-center reveal relative z-10">
                 <!-- Ghost Border Container -->
                 <div
-                    class="border border-white/30 p-12 md:p-16 max-w-5xl mx-auto relative backdrop-blur-sm bg-black/20">
+                    class="border border-white/30 p-12 md:p-16 max-w-5xl mx-auto relative backdrop-blur-sm bg-black/10">
+                    <div class="mb-8 scale-75 md:scale-100">
+                        <img src="assets/header_logo.png" alt="Inscor Hero Logo"
+                            class="h-20 md:h-28 mx-auto brightness-0 invert">
+                    </div>
                     <h1
-                        class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white uppercase tracking-wider font-montserrat">
-                        TARAND INVESTMENTS</h1>
+                        class="text-4xl md:text-5xl font-bold mb-6 leading-tight text-white uppercase tracking-wider font-montserrat">
+                        Feeding the Nation,<br>Fuelling the Future.</h1>
                     <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-white font-light leading-relaxed">
-                        A diversified holding company driving Zimbabwe's industrial evolution through Energy,
-                        Agriculture, and Manufacturing.
+                        Innscor Africa Limited is a focused group of light manufacturing businesses which, together with
+                        various strategically integrated agricultural operations, produce a number of Zimbabwe’s iconic
+                        brands in the consumer staple product space.
                     </p>
                     <a href="#"
                         class="inline-flex items-center bg-white/10 hover:bg-white/20 border-2 border-white text-white px-8 py-3 rounded-full uppercase tracking-widest text-xs font-bold transition-all group">
-                        Discover the Group <i class="fas fa-play ml-3 text-[10px]"></i>
+                        Read More <i class="fas fa-play ml-3 text-[10px]"></i>
                     </a>
                 </div>
             </div>
@@ -293,20 +306,23 @@
                     <div class="md:w-3/4 flex flex-col md:flex-row bg-[#F1F4F6]">
                         <div
                             class="flex-1 p-8 flex flex-col items-center justify-center text-center border-r border-gray-200">
-                            <span class="text-gray-500 text-xs uppercase mb-2">Total Power</span>
-                            <span class="text-innscor-blue text-3xl font-extrabold">250 MW</span>
-                            <span class="text-gray-400 text-[10px] mt-4">Installed Capacity</span>
+                            <img src="assets/revenue-icon.png" alt="" class="h-10 mb-4 opacity-70">
+                            <span class="text-gray-500 text-xs uppercase mb-2">Revenue (billions)</span>
+                            <span class="text-innscor-blue text-3xl font-extrabold">USD1.086</span>
+                            <span class="text-gray-400 text-[10px] mt-4">As at 30 June 2025</span>
                         </div>
                         <div
                             class="flex-1 p-8 flex flex-col items-center justify-center text-center border-r border-gray-200">
-                            <span class="text-gray-500 text-xs uppercase mb-2">Consumer Reach</span>
-                            <span class="text-innscor-blue text-3xl font-extrabold">2.5M+</span>
-                            <span class="text-gray-400 text-[10px] mt-4">Daily Interactions</span>
+                            <img src="assets/profit-icon.png" alt="" class="h-10 mb-4 opacity-70">
+                            <span class="text-gray-500 text-xs uppercase mb-2">Operating Profit (millions)</span>
+                            <span class="text-innscor-blue text-3xl font-extrabold">USD96</span>
+                            <span class="text-gray-400 text-[10px] mt-4">As at 30 June 2025</span>
                         </div>
                         <div class="flex-1 p-8 flex flex-col items-center justify-center text-center">
+                            <img src="assets/employees-icon.png" alt="" class="h-10 mb-4 opacity-70">
                             <span class="text-gray-500 text-xs uppercase mb-2">Employees</span>
-                            <span class="text-innscor-blue text-3xl font-extrabold">8,500</span>
-                            <span class="text-gray-400 text-[10px] mt-4">Across Group</span>
+                            <span class="text-innscor-blue text-3xl font-extrabold">Over 10,000</span>
+                            <span class="text-gray-400 text-[10px] mt-4">As at 30 June 2025</span>
                         </div>
                     </div>
                 </div>
@@ -529,10 +545,15 @@
                             <div
                                 class="leaf-card border-t border-l border-[#011E4B] p-10 bg-white shadow-xl min-h-[300px] flex flex-col justify-center">
                                 <p class="text-innscor-blue text-xl font-bold leading-tight">
-                                    To be the leading industrial catalyst in Southern Africa, energizing communities and
-                                    empowering generations through sustainable value creation.
+                                    Our vision is to improve the quality of life of the customers in our chosen target
+                                    markets and thereby create and unlock value for all our stakeholders.
                                 </p>
                             </div>
+                            <p class="mt-8 text-gray-600 text-sm leading-relaxed">
+                                We do this by bringing access to best value consumer staple and durable goods at the
+                                lowest
+                                relative prices.
+                            </p>
                         </div>
 
                         <!-- Our Mission -->
@@ -544,9 +565,24 @@
                             <div
                                 class="leaf-card border-t border-l border-[#00AEEF] p-10 bg-white shadow-xl min-h-[300px] flex flex-col justify-center">
                                 <p class="text-[#00AEEF] text-xl font-bold leading-tight">
-                                    We build and maintain resilient infrastructure in Energy, Mining, and Agriculture,
-                                    delivering consistent returns while uplifting our nation.
+                                    Innscor Africa Limited is a focused group of light manufacturing businesses which
+                                    produce a number of Zimbabwe's iconic brands in the consumer staple and durable
+                                    product
+                                    space.
                                 </p>
+                            </div>
+                            <div class="mt-8 text-gray-600 text-sm leading-relaxed">
+                                <p class="mb-4">We manufacture consumer staple and durable goods for the mass market
+                                    through
+                                    a managed and where strategically appropriate, integrated portfolio of businesses
+                                    which:
+                                </p>
+                                <ul class="space-y-2 list-disc pl-5">
+                                    <li>benefit from being part of our Group</li>
+                                    <li>have the ability of being lowest cost producers</li>
+                                    <li>have the ability and potential to achieve scale</li>
+                                    <li>have the ability to become market leaders</li>
+                                </ul>
                             </div>
                         </div>
 
@@ -560,19 +596,35 @@
                                 class="leaf-card border-t border-l border-[#8E232E] p-10 bg-white shadow-xl min-h-[300px]">
                                 <ul class="space-y-3">
                                     <li class="flex items-center text-[#8E232E] font-bold">
-                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Innovation
+                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Passion for value
+                                        creation
+                                    </li>
+                                    <li class="flex items-center text-[#8E232E] font-bold">
+                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Empowering and
+                                        supporting our communities
+                                    </li>
+                                    <li class="flex items-center text-[#8E232E] font-bold">
+                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Entrepreneurial
+                                        spirit
+                                    </li>
+                                    <li class="flex items-center text-[#8E232E] font-bold">
+                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Leadership
+                                    </li>
+                                    <li class="flex items-center text-[#8E232E] font-bold">
+                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Quality in all we
+                                        do
                                     </li>
                                     <li class="flex items-center text-[#8E232E] font-bold">
                                         <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Integrity
                                     </li>
                                     <li class="flex items-center text-[#8E232E] font-bold">
-                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Sustainability
+                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Accountability
                                     </li>
                                     <li class="flex items-center text-[#8E232E] font-bold">
-                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Excellence
+                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Trust
                                     </li>
                                     <li class="flex items-center text-[#8E232E] font-bold">
-                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Community
+                                        <span class="w-2 h-2 rounded-full bg-[#8E232E] mr-3"></span> Collaboration
                                     </li>
                                 </ul>
                             </div>
@@ -763,10 +815,11 @@
     <footer class="bg-innscor-blue text-white pt-24 pb-12">
         <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-4 gap-16">
             <div class="reveal">
-                <img src="assets/footer_logo-150.png" alt="Tarand Logo" class="h-20 mb-10 brightness-0 invert">
-                <p class="text-gray-300 leading-relaxed text-sm mt-6">
-                    Tarand Investments is a diversified holding company managing a portfolio of over 20 businesses
-                    across Energy, Agriculture, Mining, and Manufacturing sectors in Zimbabwe.
+                <img src="assets/footer_logo-150.png" alt="Logo" class="h-20 mb-10 brightness-0 invert">
+                <p class="text-gray-300 leading-relaxed text-sm">
+                    Innscor Africa Limited is a focused investment holding company which manages a portfolio of over 20
+                    businesses which manufacture and distribute a range of consumer staple and durable goods for the
+                    mass market.
                 </p>
                 <div class="mt-8 flex space-x-4">
                     <a href="#"
@@ -783,23 +836,23 @@
             <div class="reveal delay-100">
                 <h4
                     class="text-white font-bold mb-10 text-lg uppercase tracking-widest border-l-4 border-innscor-yellow pl-4">
-                    Who We Are</h4>
+                    About Us</h4>
                 <ul class="space-y-4 text-gray-300 text-sm">
                     <li><a href="#" class="hover:text-innscor-yellow transition-colors">Group Overview</a></li>
                     <li><a href="#" class="hover:text-innscor-yellow transition-colors">Board of Directors</a></li>
-                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Executive Team</a></li>
-                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">History</a></li>
+                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Group Management</a></li>
+                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Our History</a></li>
                 </ul>
             </div>
             <div class="reveal delay-200">
                 <h4
                     class="text-white font-bold mb-10 text-lg uppercase tracking-widest border-l-4 border-innscor-yellow pl-4">
-                    Our Sectors</h4>
+                    Our Business</h4>
                 <ul class="space-y-4 text-gray-300 text-sm">
-                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Energy & Power</a></li>
-                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Food & Agro</a></li>
-                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Mining</a></li>
-                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Retail & Logistics</a></li>
+                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Mill – Bake</a></li>
+                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Protein</a></li>
+                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Beverages & Other</a></li>
+                    <li><a href="#" class="hover:text-innscor-yellow transition-colors">Our Impact</a></li>
                 </ul>
             </div>
             <div class="reveal delay-300">
@@ -817,7 +870,7 @@
                     </p>
                     <p class="flex items-center">
                         <i class="fas fa-envelope mr-4 text-innscor-yellow"></i>
-                        <span>info@tarand.co.zw</span>
+                        <span>info@innscorafrica.com</span>
                     </p>
                 </div>
             </div>
@@ -825,7 +878,7 @@
         <div
             class="container mx-auto px-6 md:px-12 mt-20 pt-10 border-t border-white/10 text-center text-gray-500 text-xs">
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <p>&copy; 2026 Tarand Investments. All Rights Reserved.</p>
+                <p>&copy; 2024 Innscor Africa Limited. All Rights Reserved.</p>
                 <div class="flex space-x-6">
                     <a href="#" class="hover:text-white">Privacy Policy</a>
                     <a href="#" class="hover:text-white">Terms of Use</a>

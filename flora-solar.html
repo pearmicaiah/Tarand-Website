@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora Solar | Tarand Investments</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+</head>
+
+<body class="is-loading subsidiary-page">
+
+    <!-- Header (Shared) -->
+    <header class="site-header">
+        <a href="index.html" class="logo">TARAND / <span style="opacity:0.5">ENERGY</span></a>
+        <div class="innovation-tools">
+            <a href="index.html" class="tool-btn">Back to Group</a>
+            <button id="menu-trigger" class="tool-btn menu-btn">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </button>
+        </div>
+    </header>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- 1. Video Hero Engine -->
+            <section class="sub-hero">
+                <div class="video-container">
+                    <!-- Placeholder for loop -->
+                    <div class="video-overlay"></div>
+                    <!-- Using CSS pattern for now, replace with <video> tag in prod -->
+                    <div class="video-placeholder pattern-solar"></div>
+                </div>
+
+                <div class="hero-content sub-content">
+                    <span class="sub-label">Subsidiary of Tarand Energy</span>
+                    <h1 class="sub-title">Flora Solar <br>& Tech</h1>
+
+                    <div class="live-metrics-dashboard">
+                        <div class="metric-item">
+                            <span class="metric-label">Total Capacity Installed</span>
+                            <span class="metric-value">45.2 MW</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Commercial Sites</span>
+                            <span class="metric-value">128</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">CO2 Offset</span>
+                            <span class="metric-value">8,900 T</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Context / About -->
+            <section class="sub-about">
+                <div class="container-narrow">
+                    <h2 class="sub-section-title">Powering Independence</h2>
+                    <p class="lead-text">
+                        Flora Solar serves the commercial and industrial sector with
+                        tier-1 renewable energy installations. We don't just sell panels;
+                        we engineer energy independence for Zimbabwe's production base.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 3. Service Grid -->
+            <section class="sub-services">
+                <div class="container-narrow">
+                    <div class="service-list">
+                        <div class="service-row">
+                            <h3>01 / C&I Solar Systems</h3>
+                            <p>Turnkey solar parks for mines and factories.</p>
+                        </div>
+                        <div class="service-row">
+                            <h3>02 / Power Storage</h3>
+                            <p>Industrial-scale lithium battery integration.</p>
+                        </div>
+                        <div class="service-row">
+                            <h3>03 / Technical Maintenance</h3>
+                            <p>24/7 monitoring and performance optimization.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Next Subsidiary (Infinite Flow) -->
+            <section class="next-brand" style="background: var(--color-dark)">
+                <div class="next-label">Next in Energy Sector:</div>
+                <h2>Global Energies</h2>
+                <a href="#" class="next-btn">Explore -></a>
+            </section>
+
+            <!-- Footer -->
+            <footer class="site-footer">
+                <div class="footer-content">
+                    <h3>TARAND INVESTMENTS</h3>
+                    <p>&copy; 2026 Holding Company. All Rights Reserved.</p>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <script>
+        // Inline script for Demo logic (simulating separate file)
+        const lenis = new Lenis();
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        // Intro
+        gsap.from('.sub-title', { y: 100, opacity: 0, duration: 1.5, ease: 'power4.out', delay: 0.2 });
+        gsap.from('.metric-item', { y: 20, opacity: 0, duration: 1, stagger: 0.1, delay: 0.8 });
+    </script>
+</body>
+
+</html>
