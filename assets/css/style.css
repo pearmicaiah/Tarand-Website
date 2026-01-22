@@ -1,0 +1,332 @@
+/* 
+ * TARAND INVESTMENTS
+ * Master Design Tokens & Core Styles
+ */
+
+:root {
+    /* 1. Core Palette */
+    --color-dark: #0a0a0a;
+    --color-light: #f4f4f4;
+    --color-glass: rgba(255, 255, 255, 0.05);
+    --color-border: rgba(255, 255, 255, 0.1);
+
+    /* 2. Sector Themes */
+    --theme-energy: #E5B946;
+    /* Industrial Gold */
+    --theme-agro: #569D03;
+    /* Ecomatt Green */
+    --theme-mining: #C69C6D;
+    /* Earth/Copper */
+    --theme-logistics: #2B4C7E;
+    /* Deep Blue */
+    --theme-retail: #E63946;
+    /* Retail Red */
+    --theme-creative: #9D4EDD;
+    /* Vibrant Purple */
+    --theme-manufacturing: #D66853;
+    /* Brick/Industrial */
+
+    /* 3. Typography */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* 4. Motion */
+    --ease-smooth: cubic-bezier(0.62, 0.05, 0.01, 0.99);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    /* Lenis handles scroll */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* WebGL Container */
+#webgl-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.6;
+    /* Slight dim for text readability */
+    pointer-events: none;
+}
+
+/* Header & Tools */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    mix-blend-mode: difference;
+    /* Ensures visibility on light/dark backgrounds */
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.innovation-tools {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.tool-btn {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-light);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s var(--ease-smooth);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tool-btn:hover {
+    background: var(--color-light);
+    color: var(--color-dark);
+}
+
+/* Menu Trigger (Mac Pro Grater Style) */
+.menu-btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-btn .dot {
+    width: 4px;
+    height: 4px;
+    background-color: currentColor;
+    border-radius: 50%;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    position: relative;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 5vw;
+    line-height: 1.1;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.reveal-text {
+    display: block;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* Live Ticker */
+.live-ticker {
+    font-family: 'Space Grotesk', monospace;
+    /* Monospace-ish feel */
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    color: var(--theme-agro);
+    /* Default highlight */
+    display: flex;
+    gap: 1rem;
+    opacity: 0.8;
+}
+
+.ticker-separator {
+    color: var(--color-border);
+}
+
+/* Bento Overlay */
+.bento-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 5, 5, 0.98);
+    /* Update to darker */
+    z-index: 200;
+    display: none;
+    opacity: 0;
+    padding: 6rem 4rem 4rem 4rem;
+    /* Top padding for header clearance */
+}
+
+/* Close Button Position */
+.close-bento {
+    position: absolute;
+    top: 2.5rem;
+    right: 3rem;
+    background: none;
+    border: none;
+    color: var(--color-light);
+    font-family: var(--font-heading);
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.close-bento:hover {
+    opacity: 1;
+}
+
+/* The Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, minmax(150px, 1fr));
+    /* 3 rows */
+    gap: 1.5rem;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Bento Items */
+.bento-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    transition: transform 0.3s var(--ease-smooth), border-color 0.3s;
+}
+
+.bento-item:hover {
+    border-color: var(--item-color);
+    transform: scale(0.98);
+}
+
+.bento-bg {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--item-color) 0%, transparent 40%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 0;
+    mix-blend-mode: screen;
+}
+
+.bento-item:hover .bento-bg {
+    opacity: 0.15;
+}
+
+.bento-content {
+    position: relative;
+    z-index: 1;
+}
+
+.bento-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.bento-label {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Grid Spans */
+.bento-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.bento-item.medium {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.bento-item.wide {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.bento-item.small {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .bento-item.large,
+    .bento-item.wide {
+        grid-column: span 2;
+    }
+
+    .bento-item.medium,
+    .bento-item.small {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-overlay {
+        padding: 6rem 1.5rem 2rem 1.5rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .bento-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+        min-height: 120px;
+    }
+}
