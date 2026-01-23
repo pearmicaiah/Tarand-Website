@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Mining Electrification | Tarand Investments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'innscor-blue': '#06205D',
+                        'innscor-text': '#32383F',
+                        'innscor-yellow': '#F9B41B',
+                        'tarand-primary': '#06205D',
+                        'tarand-secondary': '#F9B41B',
+                        'case-accent': '#2CB67D',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+                    },
+                    backgroundImage: {
+                        'tarand-gradient': 'linear-gradient(90deg, #2ab672 0%, #1f77b3 50%, #241d53 100%)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-montserrat text-innscor-text bg-white">
+
+    <!-- Header (Condensed) -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/header_logo.png" alt="Tarand Logo" class="h-10 md:h-12">
+                <span
+                    class="ml-4 text-xs md:text-sm font-bold text-gray-400 border-l border-gray-300 pl-4 tracking-widest uppercase hidden sm:block">
+                    Case Study
+                </span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <a href="sector-energy.html"
+                    class="text-sm font-bold text-innscor-blue hover:text-innscor-yellow uppercase tracking-wider hidden md:block">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to Sector
+                </a>
+                <button class="text-innscor-blue text-2xl"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+
+        <!-- Hero Section -->
+        <section class="container mx-auto px-6 mb-20">
+            <div class="relative rounded-3xl overflow-hidden h-[70vh] shadow-2xl">
+                <!-- BG Image -->
+                <div class="absolute inset-0 bg-[url('assets/sector_mining.png')] bg-cover bg-center"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#06205D] via-transparent to-transparent opacity-90">
+                </div>
+
+                <div class="absolute bottom-0 left-0 w-full p-8 md:p-16 text-white">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                        <div class="max-w-2xl">
+                            <span
+                                class="bg-case-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">
+                                Energy Efficiency
+                            </span>
+                            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                                Grid-Scale Hybrid Power for Remote Mining
+                            </h1>
+                            <p class="text-lg md:text-xl text-gray-200">
+                                How Flora Solar reduced diesel dependency by 40% for Continental Treasures Mining.
+                            </p>
+                        </div>
+                        <div class="hidden md:block text-right">
+                            <div class="mb-2 text-xs uppercase tracking-widest text-gray-400">Client</div>
+                            <div class="font-bold text-lg mb-6">Continental Treasures</div>
+
+                            <div class="mb-2 text-xs uppercase tracking-widest text-gray-400">Location</div>
+                            <div class="font-bold text-lg">Kadoma, Zimbabwe</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. The Challenge (Problem) - Section 4.5 -->
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="flex flex-col md:flex-row gap-16 items-start">
+                    <div class="md:w-1/3">
+                        <h2 class="text-innscor-blue text-3xl font-bold mb-4 relative z-10">
+                            The Challenge
+                            <span class="absolute -bottom-2 left-0 w-12 h-1 bg-red-500"></span>
+                        </h2>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                            Running a tier-1 gold mine requires uninterrupted baseload power. With national grid
+                            instability
+                            and rising diesel costs, Continental Treasures was facing an operational expenditure crisis.
+                        </p>
+                        <p class="text-lg text-gray-600 leading-relaxed font-semibold">
+                            The directive was clear: Reduce OPEX without compromising a single minute of uptime.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. The Intervention (Solution) - Visual Flow -->
+        <section class="py-24 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-innscor-blue text-3xl font-bold mb-4">The Solution</h2>
+                    <div class="w-16 h-1 bg-case-accent mx-auto"></div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-lg relative group hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="text-6xl font-black text-gray-100 absolute top-4 right-4 z-0 group-hover:text-case-accent/10 transition-colors">
+                            01</div>
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 bg-case-accent/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-search text-case-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-innscor-blue mb-3">Load Analysis</h3>
+                            <p class="text-gray-500 text-sm">Deployed smart meters to map peak load consumption vs.
+                                baseload requirements over a 30-day period.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-lg relative group hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="text-6xl font-black text-gray-100 absolute top-4 right-4 z-0 group-hover:text-case-accent/10 transition-colors">
+                            02</div>
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 bg-case-accent/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-solar-panel text-case-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-innscor-blue mb-3">Hybrid Integration</h3>
+                            <p class="text-gray-500 text-sm">Installed a 2.5MW solar tracking farm integrated directly
+                                with existing diesel generators via a master controller.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-lg relative group hover:-translate-y-2 transition-transform duration-300">
+                        <div
+                            class="text-6xl font-black text-gray-100 absolute top-4 right-4 z-0 group-hover:text-case-accent/10 transition-colors">
+                            03</div>
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 bg-case-accent/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fas fa-chart-line text-case-accent"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-innscor-blue mb-3">Smart Optimization</h3>
+                            <p class="text-gray-500 text-sm">Automated logic prioritizes solar > battery > grid >
+                                diesel, ensuring cheapest power source is always used first.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Gallery -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+                    <div class="h-48 bg-gray-200 rounded-lg bg-[url('assets/sector_energy.png')] bg-cover bg-center">
+                    </div>
+                    <div class="h-48 bg-gray-200 rounded-lg bg-[url('assets/sector_mining.png')] bg-cover bg-center">
+                    </div>
+                    <div
+                        class="h-48 bg-gray-200 rounded-lg bg-[url('assets/sector_agriculture.png')] bg-cover bg-center">
+                    </div>
+                    <div
+                        class="h-48 bg-gray-900 rounded-lg flex items-center justify-center text-white cursor-pointer hover:bg-gray-800 transition-colors">
+                        <span class="font-bold text-sm uppercase tracking-wide">+ View Gallery</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The Impact (Results) -->
+        <section class="py-24 bg-innscor-blue text-white overflow-hidden relative">
+            <!-- Decorative Elements -->
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2">
+            </div>
+
+            <div class="container mx-auto px-6 max-w-6xl relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between mb-16">
+                    <h2 class="text-4xl font-bold">Real World Impact</h2>
+                    <a href="#"
+                        class="inline-flex items-center text-case-accent font-bold uppercase text-sm hover:text-white transition-colors mt-4 md:mt-0">
+                        Download Full Report <i class="fas fa-download ml-2"></i>
+                    </a>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
+                    <div class="py-8 md:py-0 reveal-metric">
+                        <div class="text-5xl md:text-6xl font-bold text-case-accent mb-2 count-up" data-target="40">0%
+                        </div>
+                        <div class="text-sm uppercase tracking-widest text-white/70">Diesel Reduction</div>
+                    </div>
+                    <div class="py-8 md:py-0 reveal-metric">
+                        <div class="text-5xl md:text-6xl font-bold text-case-accent mb-2 count-up" data-target="15000">0
+                        </div>
+                        <div class="text-sm uppercase tracking-widest text-white/70">Tons CO2 Saved</div>
+                    </div>
+                    <div class="py-8 md:py-0 reveal-metric">
+                        <div class="text-5xl md:text-6xl font-bold text-case-accent mb-2 count-up" data-target="1.2">0M
+                        </div>
+                        <div class="text-sm uppercase tracking-widest text-white/70">USD Annual Savings</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Project Navigation -->
+        <section class="py-20 bg-white border-t border-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="flex justify-between items-center mb-8">
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-widest">More Case Studies</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <a href="#" class="group block">
+                        <div class="h-64 rounded-xl overflow-hidden relative mb-4">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                            <img src="assets/sector_mining.png"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <h4 class="font-bold text-xl">Shaft Safety Automation</h4>
+                                <span class="text-xs opacity-70">Mining Tech</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="group block">
+                        <div class="h-64 rounded-xl overflow-hidden relative mb-4">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                            <img src="assets/sector_agriculture.png"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-6 left-6 text-white">
+                                <h4 class="font-bold text-xl">Smart Irrigation Grid</h4>
+                                <span class="text-xs opacity-70">Agriculture</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Standard) -->
+    <footer class="bg-tarand-gradient text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h4 class="font-bold text-lg mb-4">Tarand Investments</h4>
+            <div class="flex justify-center space-x-6 mb-8 text-sm text-white/70">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="#" class="hover:text-white">Sectors</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-white/40 text-xs">&copy; 2026 Tarand Investments. Innovations Division.</p>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Simple counter animation
+        const metrics = document.querySelectorAll('.count-up');
+        metrics.forEach(metric => {
+            const target = parseFloat(metric.getAttribute('data-target'));
+            ScrollTrigger.create({
+                trigger: metric,
+                start: "top 80%",
+                onEnter: () => {
+                    gsap.to(metric, {
+                        innerHTML: target,
+                        duration: 2,
+                        snap: { innerHTML: 1 },
+                        modifiers: {
+                            innerHTML: val => Math.floor(val).toLocaleString() + (metric.innerText.includes('M') ? 'M' : '') + (metric.innerText.includes('%') ? '%' : '')
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innscor Africa Limited – Manufacturer of consumer staple and durable goods</title>
+    <!-- Three.js for "Living Organism" Innovation Layer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
@@ -22,10 +24,25 @@
                         'tarand-secondary': '#F9B41B',
                     },
                     backgroundImage: {
-                        'tarand-gradient': 'linear-gradient(135deg, #06205D 0%, #00509E 100%)', /* Placeholder Blue Gradient */
+                        'tarand-gradient': 'linear-gradient(90deg, #2ab672 0%, #1f77b3 50%, #241d53 100%)',
                     },
                     fontFamily: {
                         'montserrat': ['Montserrat', 'sans-serif'],
+                        'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+                    },
+                    animation: {
+                        'ticker': 'ticker 40s linear infinite', /* Slowed down slightly for readability */
+                        'fade-in': 'fadeIn 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        ticker: {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
@@ -79,15 +96,37 @@
     <!-- High-Fidelity Header Section -->
     <header id="main-header" class="fixed w-full z-100 transition-all font-montserrat">
         <!-- Top Tier: Utility Bar -->
-        <div class="header-top-tier py-3">
+        <div class="header-top-tier py-3 bg-tarand-gradient overflow-hidden relative">
             <div
-                class="container mx-auto px-6 flex justify-between items-center text-[11px] font-semibold text-white/80 uppercase tracking-widest">
-                <div class="flex items-center space-x-6">
-                    <a href="#" class="hover:text-white transition-colors">Sustainability</a>
-                    <a href="#" class="hover:text-white transition-colors">Subsidiaries</a>
-                    <a href="#" class="hover:text-white transition-colors">Investor Tools</a>
+                class="container mx-auto px-6 flex justify-between items-center text-[10px] uppercase tracking-widest text-white/90">
+
+                <!-- Ticker Container -->
+                <div class="flex-1 mr-10 relative h-4 overflow-hidden mask-linear-fade group">
+                    <div
+                        class="absolute whitespace-nowrap animate-ticker font-mono flex items-center space-x-12 group-hover:[animation-play-state:paused]">
+                        <span><span class="text-white/60 mr-2">Energy Generated:</span> <span
+                                class="text-white font-bold">250 MW</span> <i
+                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
+                        <span><span class="text-white/60 mr-2">Gold Output:</span> <span
+                                class="text-white font-bold">1,420 OZ</span> <i
+                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
+                        <span><span class="text-white/60 mr-2">Maize Milled:</span> <span
+                                class="text-white font-bold">45,000 TONS</span> <i
+                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
+                        <span><span class="text-white/60 mr-2">Retail Volume:</span> <span
+                                class="text-white font-bold">8.2M UNITS</span> <i
+                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
+                        <span><span class="text-white/60 mr-2">Safety Hours:</span> <span
+                                class="text-white font-bold">1.2M LTI-FREE</span> <i
+                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
+                        <!-- Duplicate for Loop Buffer -->
+                        <span><span class="text-white/60 mr-2">Energy Generated:</span> <span
+                                class="text-white font-bold">250 MW</span></span>
+                    </div>
                 </div>
-                <div class="flex items-center space-x-6">
+
+                <!-- Right Side Utility -->
+                <div class="flex items-center space-x-6 z-10 bg-inherit pl-4">
                     <div class="relative hidden md:block">
                         <input type="text"
                             class="w-48 bg-white/10 border border-white/20 rounded py-1 px-3 focus:outline-none focus:bg-white/20 text-white text-[10px]"
@@ -112,7 +151,7 @@
         </div>
 
         <!-- Bottom Tier: Primary Nav (Sticky) -->
-        <nav class="header-nav-bar bg-[#011E4B] border-b border-white/10 hidden lg:block">
+        <nav class="header-nav-bar bg-tarand-gradient border-b border-white/10 hidden lg:block shadow-md">
             <div class="container mx-auto px-6 relative">
                 <ul
                     class="flex items-center space-x-8 justify-center text-[13px] font-semibold text-white uppercase tracking-wider">
@@ -132,100 +171,79 @@
                             Our Sectors <i class="fas fa-chevron-down ml-2 text-[10px]"></i>
                         </a>
                         <!-- Mega Menu Container -->
+                        <!-- Bento Grid Mega Menu Container -->
                         <div
-                            class="mega-menu-container absolute left-0 right-0 top-full bg-white shadow-2xl rounded-b-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-innscor-text overflow-hidden">
-                            <div class="flex h-[500px]">
-                                <!-- Left Sidebar: Vertical Tabs -->
-                                <div class="w-1/4 border-r border-gray-100 bg-gray-50/50 p-8 space-y-2 overflow-y-auto">
-                                    <button
-                                        class="mega-tab-btn active w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="energy">Energy & Power</button>
-                                    <button
-                                        class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="food">Food Security</button>
-                                    <button
-                                        class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="mining">Mining</button>
-                                    <button
-                                        class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="retail">Retail</button>
-                                    <button
-                                        class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all border-b border-dotted border-gray-300"
-                                        data-tab="logistics">Logistics</button>
-                                    <button
-                                        class="mega-tab-btn w-full text-left py-3 px-4 rounded-lg font-bold text-innscor-blue hover:bg-white transition-all"
-                                        data-tab="creative">Creative</button>
-                                </div>
-                                <!-- Right Content Panel -->
-                                <div class="w-3/4 p-10 relative overflow-hidden bg-white">
+                            class="mega-menu-container absolute left-0 right-0 top-full bg-white/95 backdrop-blur-xl shadow-2xl rounded-b-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-innscor-text overflow-hidden border-t-4 border-innscor-yellow">
+                            <div class="container mx-auto p-8">
+                                <div class="grid grid-cols-1 md:grid-cols-5 md:grid-rows-2 gap-4 h-auto md:h-[450px]">
 
-                                    <!-- Energy -->
-                                    <div id="tab-content-energy"
-                                        class="mega-tab-content active h-full flex flex-col justify-center animate-fade-in">
-                                        <h3 class="text-3xl font-bold text-innscor-blue mb-2">Energy & Power</h3>
-                                        <div class="w-20 h-1 bg-innscor-yellow mb-8"></div>
-                                        <div class="grid grid-cols-3 gap-6">
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Global Energies</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Fuel Distribution</p>
-                                            </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Flora Gas</h4>
-                                                <p class="text-xs text-gray-500 mt-1">LPG Supply</p>
-                                            </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Flora Solar</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Renewable Tech</p>
-                                            </div>
+                                    <!-- Energy (Large Tile - 2x2) -->
+                                    <a href="#"
+                                        class="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl bg-[#0F6DB4] hover:shadow-2xl transition-all">
+                                        <div
+                                            class="absolute inset-0 bg-[url('assets/sector_energy.png')] bg-cover bg-center opacity-60 group-hover:scale-110 transition-transform duration-700">
                                         </div>
-                                    </div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
+                                        </div>
+                                        <div class="absolute bottom-6 left-6 z-10">
+                                            <i class="fas fa-bolt text-innscor-yellow text-3xl mb-3"></i>
+                                            <h3 class="text-white text-3xl font-bold">Energy & Power</h3>
+                                            <p
+                                                class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                                                Global Energies, Flora Gas, Flora Solar</p>
+                                        </div>
+                                    </a>
 
-                                    <!-- Food -->
-                                    <div id="tab-content-food"
-                                        class="mega-tab-content hidden h-full flex flex-col justify-center animate-fade-in">
-                                        <h3 class="text-3xl font-bold text-innscor-blue mb-2">Manufacturing & Agro</h3>
-                                        <div class="w-20 h-1 bg-innscor-yellow mb-8"></div>
-                                        <div class="grid grid-cols-3 gap-6">
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Granite Haven Bakery</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Industrial Baking</p>
-                                            </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Ecomatt Foods</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Milling</p>
-                                            </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Ecomatt Farm</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Integrated Farming</p>
-                                            </div>
+                                    <!-- Food & Agro (Medium Tile) -->
+                                    <a href="#sector-agro"
+                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-[#2CB67D] hover:shadow-xl transition-all p-6 flex flex-col justify-between h-[180px] md:h-auto">
+                                        <div
+                                            class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors">
                                         </div>
-                                    </div>
+                                        <i class="fas fa-bread-slice text-white text-xl"></i>
+                                        <h3 class="text-white text-lg font-bold relative z-10">Food & Agro</h3>
+                                    </a>
 
-                                    <!-- Mining -->
-                                    <div id="tab-content-mining"
-                                        class="mega-tab-content hidden h-full flex flex-col justify-center animate-fade-in">
-                                        <h3 class="text-3xl font-bold text-innscor-blue mb-2">Mining & Infrastructure
-                                        </h3>
-                                        <div class="w-20 h-1 bg-innscor-yellow mb-8"></div>
-                                        <div class="grid grid-cols-3 gap-6">
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">Continental Treasures</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Gold & Minerals</p>
-                                            </div>
-                                            <div
-                                                class="p-4 border border-gray-100 rounded hover:shadow-lg transition-shadow">
-                                                <h4 class="font-bold text-innscor-blue">GH Engineering</h4>
-                                                <p class="text-xs text-gray-500 mt-1">Civil Works</p>
-                                            </div>
+                                    <!-- Mining (Medium Tile) -->
+                                    <a href="#sector-mining"
+                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-[#25215A] hover:shadow-xl transition-all p-6 flex flex-col justify-between h-[180px] md:h-auto">
+                                        <div
+                                            class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors">
                                         </div>
-                                    </div>
+                                        <i class="fas fa-gem text-innscor-yellow text-xl"></i>
+                                        <h3 class="text-white text-lg font-bold relative z-10">Mining</h3>
+                                    </a>
+
+                                    <!-- Agriculture (Medium Tile - NEW) -->
+                                    <a href="#sector-agriculture"
+                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-[#2FAF6E] hover:shadow-xl transition-all p-6 flex flex-col justify-between h-[180px] md:h-auto">
+                                        <div
+                                            class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors">
+                                        </div>
+                                        <i class="fas fa-tractor text-white text-xl"></i>
+                                        <h3 class="text-white text-lg font-bold relative z-10">Agriculture</h3>
+                                    </a>
+
+                                    <!-- Retail (Small Tile) -->
+                                    <a href="#sector-retail"
+                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all p-6 flex flex-col justify-end border border-gray-100 h-[150px] md:h-auto">
+                                        <i class="fas fa-shopping-cart text-[#0F6DB4] text-xl mb-2"></i>
+                                        <h3 class="text-[#0F6DB4] font-bold leading-tight">Retail</h3>
+                                    </a>
+
+                                    <!-- Logistics (Small Tile) -->
+                                    <a href="#sector-logistics"
+                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all p-6 flex flex-col justify-end border border-gray-100 h-[150px] md:h-auto">
+                                        <i class="fas fa-truck text-[#0F6DB4] text-xl mb-2"></i>
+                                        <h3 class="text-[#0F6DB4] font-bold leading-tight">Logistics</h3>
+                                    </a>
+
+                                    <!-- Creative (Small Tile - NEW) -->
+                                    <a href="#sector-creative"
+                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all p-6 flex flex-col justify-end border border-gray-100 h-[150px] md:h-auto">
+                                        <i class="fas fa-paint-brush text-[#0F6DB4] text-xl mb-2"></i>
+                                        <h3 class="text-[#0F6DB4] font-bold leading-tight">Creative</h3>
+                                    </a>
 
                                 </div>
                             </div>
@@ -462,24 +480,23 @@
             <section class="py-32 bg-white scroll-reveal">
                 <div class="container mx-auto px-6 md:px-12">
                     <div class="grid md:grid-cols-2 gap-20 items-center">
-                        <div class="reveal">
+                        <div class="reveal" id="sector-energy">
                             <span
-                                class="text-innscor-yellow font-bold uppercase tracking-widest text-sm mb-4 block">Manufacturing
-                                Excellence</span>
-                            <h2 class="text-5xl font-bold mb-8">Mill – Bake</h2>
+                                class="text-tarand-green font-bold uppercase tracking-widest text-sm mb-4 block">Sector
+                                01: Energy & Power</span>
+                            <h2 class="text-5xl font-bold mb-8 text-innscor-blue">Global Energies</h2>
                             <p class="text-innscor-text text-lg mb-10 leading-relaxed">
-                                A focused investment holding company which manages a portfolio of over 20 businesses
-                                which
-                                manufacture and distribute a range of consumer staple and durable goods for the mass
-                                market.
+                                Driving Zimbabwe's industrial evolution through reliable fuel distribution, LPG supply
+                                via Flora Gas, and renewable solar solutions via Flora Solar.
                             </p>
-                            <a href="#" class="inline-flex items-center text-innscor-blue font-bold group">
-                                Explore Mill-Bake <i
+                            <a href="#" class="inline-flex items-center text-tarand-blue font-bold group">
+                                Explore Energy Portfolio <i
                                     class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
                             </a>
                         </div>
                         <div class="reveal delay-200">
-                            <img src="assets/mill-bake-bg-4.webp" alt="Mill Bake" class="rounded-3xl shadow-2xl">
+                            <img src="assets/sector_energy.png" alt="Energy Sector"
+                                class="rounded-3xl shadow-2xl h-[400px] w-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -492,20 +509,149 @@
                         <div class="order-2 md:order-1 reveal">
                             <img src="assets/protein-bg4.webp" alt="Protein" class="rounded-3xl shadow-2xl">
                         </div>
-                        <div class="order-1 md:order-2 reveal delay-200">
+                        <div class="order-1 md:order-2 reveal delay-200" id="sector-agro">
                             <span
-                                class="text-innscor-yellow font-bold uppercase tracking-widest text-sm mb-4 block">High
-                                Quality Standards</span>
-                            <h2 class="text-5xl font-bold mb-8">Protein</h2>
+                                class="text-tarand-green font-bold uppercase tracking-widest text-sm mb-4 block">Sector
+                                02: Agro-Processing</span>
+                            <h2 class="text-5xl font-bold mb-8 text-innscor-blue">Food Security</h2>
                             <p class="text-innscor-text text-lg mb-10 leading-relaxed">
-                                Our protein segment focuses on delivering the best quality poultry and meat products
-                                across
-                                the region, maintaining the highest international standards of safety and nutrition.
+                                From farm to fork. Our integrated agro-processing division ensures national food
+                                security through Granite Haven Bakery, Ecomatt Foods, and Ecomatt Farm.
                             </p>
-                            <a href="#" class="inline-flex items-center text-innscor-blue font-bold group">
-                                Explore Protein <i
+                            <a href="#" class="inline-flex items-center text-tarand-blue font-bold group">
+                                Explore Food Division <i
                                     class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
                             </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sector 03: Agriculture (White) -->
+            <section class="py-32 bg-white scroll-reveal">
+                <div class="container mx-auto px-6 md:px-12">
+                    <div class="grid md:grid-cols-2 gap-20 items-center">
+                        <div class="reveal" id="sector-agriculture">
+                            <span
+                                class="text-tarand-green font-bold uppercase tracking-widest text-sm mb-4 block">Sector
+                                03: Agriculture</span>
+                            <h2 class="text-5xl font-bold mb-8 text-innscor-blue">Sustainable Farming</h2>
+                            <p class="text-innscor-text text-lg mb-10 leading-relaxed">
+                                Primary production driving vertical integration. Ecomatt Farm specializes in
+                                horticulture, livestock, and crop production to support our value chain.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-tarand-blue font-bold group">
+                                Explore Agriculture <i
+                                    class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                        </div>
+                        <div class="reveal delay-200">
+                            <img src="assets/sector_agriculture.png" alt="Agriculture"
+                                class="rounded-3xl shadow-2xl h-[400px] w-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sector 04: Mining (Gray) -->
+            <section class="py-32 bg-gray-50 scroll-reveal">
+                <div class="container mx-auto px-6 md:px-12">
+                    <div class="grid md:grid-cols-2 gap-20 items-center">
+                        <div class="order-2 md:order-1 reveal">
+                            <img src="assets/sector_mining.png" alt="Mining"
+                                class="rounded-3xl shadow-2xl h-[400px] w-full object-cover">
+                        </div>
+                        <div class="order-1 md:order-2 reveal delay-200" id="sector-mining">
+                            <span
+                                class="text-tarand-green font-bold uppercase tracking-widest text-sm mb-4 block">Sector
+                                04: Mining & Infrastructure</span>
+                            <h2 class="text-5xl font-bold mb-8 text-innscor-blue">Mineral Resources</h2>
+                            <p class="text-innscor-text text-lg mb-10 leading-relaxed">
+                                Unlocking value through Continental Treasures Mining and extensive civil engineering
+                                capabilities via GH Engineering.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-tarand-blue font-bold group">
+                                Explore Mining <i
+                                    class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sector 05: Retail (White) -->
+            <section class="py-32 bg-white scroll-reveal">
+                <div class="container mx-auto px-6 md:px-12">
+                    <div class="grid md:grid-cols-2 gap-20 items-center">
+                        <div class="reveal" id="sector-retail">
+                            <span
+                                class="text-tarand-green font-bold uppercase tracking-widest text-sm mb-4 block">Sector
+                                05: Retail</span>
+                            <h2 class="text-5xl font-bold mb-8 text-innscor-blue">Consumer Reach</h2>
+                            <p class="text-innscor-text text-lg mb-10 leading-relaxed">
+                                Serving communities through Granite Haven grocery outlets and hardware supplies,
+                                essential for daily livelihoods.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-tarand-blue font-bold group">
+                                Explore Retail <i
+                                    class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                        </div>
+                        <div class="reveal delay-200">
+                            <img src="assets/sector_retail.png" alt="Retail"
+                                class="rounded-3xl shadow-2xl h-[400px] w-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sector 06: Logistics (Gray) -->
+            <section class="py-32 bg-gray-50 scroll-reveal">
+                <div class="container mx-auto px-6 md:px-12">
+                    <div class="grid md:grid-cols-2 gap-20 items-center">
+                        <div class="order-2 md:order-1 reveal">
+                            <img src="assets/sector_logistics.png" alt="Logistics"
+                                class="rounded-3xl shadow-2xl h-[400px] w-full object-cover">
+                        </div>
+                        <div class="order-1 md:order-2 reveal delay-200" id="sector-logistics">
+                            <span
+                                class="text-tarand-green font-bold uppercase tracking-widest text-sm mb-4 block">Sector
+                                06: Logistics</span>
+                            <h2 class="text-5xl font-bold mb-8 text-innscor-blue">Integrated Supply Chain</h2>
+                            <p class="text-innscor-text text-lg mb-10 leading-relaxed">
+                                Onset Transport (PRUMAC) ensures efficient distribution across our vast network,
+                                powering the movement of goods and resources.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-tarand-blue font-bold group">
+                                Explore Logistics <i
+                                    class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sector 07: Creative (White) -->
+            <section class="py-32 bg-white scroll-reveal">
+                <div class="container mx-auto px-6 md:px-12">
+                    <div class="grid md:grid-cols-2 gap-20 items-center">
+                        <div class="reveal" id="sector-creative">
+                            <span
+                                class="text-tarand-green font-bold uppercase tracking-widest text-sm mb-4 block">Sector
+                                07: Creative Services</span>
+                            <h2 class="text-5xl font-bold mb-8 text-innscor-blue">Brand & Identity</h2>
+                            <p class="text-innscor-text text-lg mb-10 leading-relaxed">
+                                Mount Plus and New Impetus drive our visual identity, print production, and strategic
+                                branding initiatives.
+                            </p>
+                            <a href="#" class="inline-flex items-center text-tarand-blue font-bold group">
+                                Explore Creative <i
+                                    class="fas fa-arrow-right ml-3 transform group-hover:translate-x-2 transition-transform"></i>
+                            </a>
+                        </div>
+                        <div class="reveal delay-200">
+                            <img src="assets/sector_creative.png" alt="Creative"
+                                class="rounded-3xl shadow-2xl h-[400px] w-full object-cover">
                         </div>
                     </div>
                 </div>
@@ -593,15 +739,13 @@
                         <!-- Left Column: Context -->
                         <div class="lg:w-1/3 reveal">
                             <h3 class="text-2xl font-bold text-innscor-blue mb-8 leading-tight">
-                                Innscor Africa Limited is a manufacturer of consumer staple and durable goods for the
-                                mass
-                                market.
+                                Tarand Investments is a diversified holding company driving value across key industrial
+                                sectors.
                             </h3>
                             <p class="text-gray-500 mb-10 leading-relaxed">
-                                From household essentials to everyday food items, Innscor Africa's diverse portfolio is
-                                built to meet the needs of millions across the region. Our products span multiple
-                                sectors,
-                                delivering quality, affordability, and consistency.
+                                From Energy and Mining to Agriculture and Logistics, Tarand's diverse portfolio is
+                                built to meet the needs of a growing nation. Our subsidiaries operate with autonomy
+                                while leveraged by group-wide strategies for excellence.
                             </p>
                             <a href="#"
                                 class="text-innscor-blue font-bold text-sm border-b-2 border-innscor-blue pb-1 hover:text-cyan-500 hover:border-cyan-500 transition-all">
@@ -760,23 +904,23 @@
             </section>
     </main>
 
-    <footer class="bg-innscor-blue text-white pt-24 pb-12">
+    <footer class="bg-tarand-gradient text-white pt-24 pb-12">
         <div class="container mx-auto px-6 md:px-12 grid md:grid-cols-4 gap-16">
             <div class="reveal">
                 <img src="assets/footer_logo-150.png" alt="Tarand Logo" class="h-20 mb-10 brightness-0 invert">
-                <p class="text-gray-300 leading-relaxed text-sm mt-6">
+                <p class="text-white/80 leading-relaxed text-sm mt-6">
                     Tarand Investments is a diversified holding company managing a portfolio of over 20 businesses
                     across Energy, Agriculture, Mining, and Manufacturing sectors in Zimbabwe.
                 </p>
                 <div class="mt-8 flex space-x-4">
                     <a href="#"
-                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-innscor-blue transition-all"><i
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-tarand-indigo transition-all"><i
                             class="fab fa-linkedin-in"></i></a>
                     <a href="#"
-                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-innscor-blue transition-all"><i
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-tarand-indigo transition-all"><i
                             class="fab fa-facebook-f"></i></a>
                     <a href="#"
-                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-innscor-blue transition-all"><i
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white hover:text-tarand-indigo transition-all"><i
                             class="fab fa-twitter"></i></a>
                 </div>
             </div>
@@ -834,6 +978,7 @@
         </div>
     </footer>
 
+    <script src="src/webgl_organism.js"></script>
     <script src="src/main.js"></script>
 </body>
 
