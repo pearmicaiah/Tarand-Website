@@ -99,7 +99,7 @@
     <!-- ================================================================= -->
 
     <!-- 1. Primary Command Bar (White Floating Control Bar) -->
-    <div class="fixed top-0 left-0 w-full z-[100] px-6 py-4 pointer-events-none display-flex justify-center">
+    <div class="fixed top-0 left-0 w-full z-[100] px-6 py-4 pointer-events-none flex justify-center h-fit">
         <nav id="command-nav"
             class="pointer-events-auto w-full max-w-7xl mx-auto bg-white rounded-2xl shadow-lg flex justify-between items-center px-8 h-20 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative"
             data-state="idle">
@@ -242,38 +242,39 @@
                         <div class="grid grid-cols-2 gap-4">
                             <!-- Flora Solar -->
                             <a href="flora-solar.html"
-                                class="group block p-4 rounded-xl border border-gray-100 hover:border-innscor-yellow hover:bg-gray-50 transition-all">
-                                <div
-                                    class="h-8 w-8 rounded bg-yellow-100 flex items-center justify-center mb-3 text-yellow-600">
-                                    <i class="fas fa-solar-panel"></i>
+                                class="flex items-center p-4 rounded-xl border border-gray-100 hover:border-innscor-yellow hover:bg-gray-50 transition-all group">
+                                <img src="/brands/florasolar.png"
+                                    class="h-14 w-auto object-contain mr-4 transition-all">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Flora
+                                        Solar & Tech</h3>
+                                    <p class="text-[10px] text-gray-500">Solar energy solutions</p>
                                 </div>
-                                <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Flora Solar &
-                                    Tech</h3>
-                                <p class="text-[10px] text-gray-500 mt-1">Solar energy solutions & installations</p>
                             </a>
                             <!-- Global Energies -->
                             <div
-                                class="group block p-4 rounded-xl border border-gray-100 hover:border-innscor-yellow hover:bg-gray-50 transition-all">
-                                <div
-                                    class="h-8 w-8 rounded bg-gray-100 flex items-center justify-center mb-3 text-gray-600">
-                                    <i class="fas fa-gas-pump"></i>
+                                class="flex items-center p-4 rounded-xl border border-gray-100 hover:border-innscor-yellow hover:bg-gray-50 transition-all group">
+                                <img src="/brands/redeemresources.png"
+                                    class="h-14 w-auto object-contain mr-4 transition-all">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Global
+                                        Energies</h3>
+                                    <p class="text-[10px] text-gray-500">Fuel distribution</p>
                                 </div>
-                                <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Global
-                                    Energies</h3>
-                                <p class="text-[10px] text-gray-500 mt-1">Industrial fuel distribution</p>
                             </div>
                             <!-- Flora Gas -->
                             <div
-                                class="group block p-4 rounded-xl border border-gray-100 hover:border-innscor-yellow hover:bg-gray-50 transition-all">
-                                <div
-                                    class="h-8 w-8 rounded bg-blue-100 flex items-center justify-center mb-3 text-blue-600">
-                                    <i class="fas fa-burn"></i>
+                                class="flex items-center p-4 rounded-xl border border-gray-100 hover:border-innscor-yellow hover:bg-gray-50 transition-all group">
+                                <img src="/brands/floragases.png"
+                                    class="h-14 w-auto object-contain mr-4 transition-all">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Flora Gas
+                                    </h3>
+                                    <p class="text-[10px] text-gray-500">Industrial gas supply</p>
                                 </div>
-                                <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Flora Gas</h3>
-                                <p class="text-[10px] text-gray-500 mt-1">LPG & industrial gas supply</p>
                             </div>
-                            <!-- Sector Image -->
-                            <div class="rounded-xl overflow-hidden relative h-full min-h-[100px]">
+                            <!-- Sector Graphic -->
+                            <div class="rounded-xl overflow-hidden relative h-full min-h-[80px]">
                                 <img src="assets/sector_energy.png"
                                     class="absolute inset-0 w-full h-full object-cover opacity-80" alt="Energy">
                             </div>
@@ -287,19 +288,19 @@
                             Subsidiaries</h4>
                         <div class="grid grid-cols-2 gap-6">
                             <!-- Bakery -->
-                            <div class="flex items-center space-x-4 group cursor-pointer">
-                                <img src="assets/subsidiary_bakery.png"
-                                    class="h-16 w-16 object-cover rounded-lg shadow-sm group-hover:scale-105 transition-transform">
+                            <div class="flex items-center space-x-4 group cursor-pointer group">
+                                <img src="brands/granitehaven.png"
+                                    class="h-14 w-auto object-contain transition-transform group-hover:scale-105">
                                 <div>
                                     <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Granite
                                         Haven Bakery</h3>
-                                    <p class="text-[10px] text-gray-500">Commercial bakery & confectionery</p>
+                                    <p class="text-[10px] text-gray-500">Commercial bakery</p>
                                 </div>
                             </div>
                             <!-- Foods -->
-                            <div class="flex items-center space-x-4 group cursor-pointer">
-                                <img src="assets/subsidiary_foods.png"
-                                    class="h-16 w-16 object-cover rounded-lg shadow-sm group-hover:scale-105 transition-transform">
+                            <div class="flex items-center space-x-4 group cursor-pointer group">
+                                <img src="brands/sbalichitsano.png"
+                                    class="h-14 w-auto object-contain transition-transform group-hover:scale-105">
                                 <div>
                                     <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Ecomatt
                                         Foods</h3>
@@ -307,9 +308,9 @@
                                 </div>
                             </div>
                             <!-- Butcheries -->
-                            <div class="flex items-center space-x-4 group cursor-pointer">
-                                <img src="assets/subsidiary_butcheries.png"
-                                    class="h-16 w-16 object-cover rounded-lg shadow-sm group-hover:scale-105 transition-transform">
+                            <div class="flex items-center space-x-4 group cursor-pointer group">
+                                <img src="brands/granitehaven.png"
+                                    class="h-14 w-auto object-contain transition-transform group-hover:scale-105">
                                 <div>
                                     <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Ecomatt
                                         Butcheries</h3>
@@ -322,18 +323,19 @@
                     <!-- 3. Agriculture Panel -->
                     <div id="panel-agriculture"
                         class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
-                        <div class="relative h-full rounded-xl overflow-hidden group">
-                            <img src="assets/sector_agriculture.png"
-                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
-                                <h3 class="text-white font-bold text-2xl mb-2">Ecomatt Farm</h3>
-                                <p class="text-white/80 text-sm max-w-sm">Integrated farming operations including
-                                    piggery, poultry, horticulture, and crop production serving our internal supply
-                                    chain.</p>
+                        <div class="flex gap-8 h-full">
+                            <div class="w-1/2 flex flex-col justify-center items-center text-center">
+                                <img src="/brands/ecomattfarm.png" class="h-20 w-auto object-contain mb-6">
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2">Ecomatt Farm</h3>
+                                <p class="text-sm text-gray-500 mb-6">Integrated farming operations including piggery,
+                                    poultry, horticulture, and crop production serving our internal supply chain.</p>
                                 <button
-                                    class="mt-4 bg-innscor-yellow text-black text-xs font-bold px-4 py-2 rounded-full w-fit hover:bg-white transition-colors">Explore
-                                    Farm Operations</button>
+                                    class="text-xs font-bold uppercase tracking-widest text-innscor-blue border-b border-innscor-yellow w-fit pb-1">Explore
+                                    Operations</button>
+                            </div>
+                            <div class="w-1/2 rounded-xl overflow-hidden shadow-lg relative">
+                                <img src="assets/sector_agriculture.png"
+                                    class="absolute inset-0 w-full h-full object-cover">
                             </div>
                         </div>
                     </div>
@@ -345,24 +347,40 @@
                         </h4>
                         <div class="grid grid-cols-2 gap-4">
                             <div
-                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors">
-                                <h3 class="font-bold text-gray-800 text-sm">CT Mining</h3>
-                                <p class="text-[10px] text-gray-500">Primary gold extraction</p>
+                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors bg-white hover:shadow-md group flex items-center">
+                                <img src="/brands/redeemresources.png" class="h-12 w-auto object-contain mr-3">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">CT Mining
+                                    </h3>
+                                    <p class="text-[10px] text-gray-500">Primary gold extraction</p>
+                                </div>
                             </div>
                             <div
-                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors">
-                                <h3 class="font-bold text-gray-800 text-sm">CT Trading</h3>
-                                <p class="text-[10px] text-gray-500">Mineral commodities trading</p>
+                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors bg-white hover:shadow-md group flex items-center">
+                                <img src="/brands/redeemresources.png" class="h-12 w-auto object-contain mr-3">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">CT Trading
+                                    </h3>
+                                    <p class="text-[10px] text-gray-500">Mineral commodities trading</p>
+                                </div>
                             </div>
                             <div
-                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors">
-                                <h3 class="font-bold text-gray-800 text-sm">CT Magazine</h3>
-                                <p class="text-[10px] text-gray-500">Explosives & mining services</p>
+                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors bg-white hover:shadow-md group flex items-center">
+                                <img src="/brands/sbalichitsano.png" class="h-12 w-auto object-contain mr-3">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">CT
+                                        Magazine</h3>
+                                    <p class="text-[10px] text-gray-500">Explosives & mining services</p>
+                                </div>
                             </div>
                             <div
-                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors bg-gray-50">
-                                <h3 class="font-bold text-gray-800 text-sm">Elite Dynamix</h3>
-                                <p class="text-[10px] text-gray-500">Engineering Infrastructure</p>
+                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors bg-gray-50 hover:shadow-md group flex items-center">
+                                <img src="/brands/granitehaven.png" class="h-12 w-auto object-contain mr-3">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Elite
+                                        Dynamix</h3>
+                                    <p class="text-[10px] text-gray-500">Engineering Infrastructure</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -372,22 +390,30 @@
                         class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
                         <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Granite Haven Retail
                         </h4>
-                        <div class="space-y-3">
-                            <a href="#"
-                                class="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border-b border-gray-100">
-                                <span class="font-bold text-gray-700">Redcliff Branch</span>
-                                <span class="text-[10px] text-gray-400 uppercase tracking-widest">FMCG</span>
-                            </a>
-                            <a href="#"
-                                class="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border-b border-gray-100">
-                                <span class="font-bold text-gray-700">Colleenbawn Branch</span>
-                                <span class="text-[10px] text-gray-400 uppercase tracking-widest">FMCG</span>
-                            </a>
-                            <a href="#"
-                                class="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border-b border-gray-100">
-                                <span class="font-bold text-gray-700">Granite Haven Hardware</span>
-                                <span class="text-[10px] text-gray-400 uppercase tracking-widest">Materials</span>
-                            </a>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="col-span-2 flex items-center p-4 bg-gray-50 rounded-xl border border-gray-100">
+                                <img src="/brands/granitehaven.png" class="h-16 w-auto object-contain mr-6">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-lg">Granite Haven</h3>
+                                    <p class="text-xs text-gray-500">Premier FMCG & Hardware Network</p>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div
+                                    class="flex items-center text-sm font-bold text-gray-700 p-2 hover:bg-gray-50 rounded">
+                                    <img src="/brands/granitehaven.png" class="h-8 w-auto mr-2"> Redcliff Branch
+                                </div>
+                                <div
+                                    class="flex items-center text-sm font-bold text-gray-700 p-2 hover:bg-gray-50 rounded">
+                                    <img src="/brands/granitehaven.png" class="h-8 w-auto mr-2"> Colleenbawn Branch
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div
+                                    class="flex items-center text-sm font-bold text-gray-700 p-2 hover:bg-gray-50 rounded">
+                                    <img src="/brands/granitehaven.png" class="h-8 w-auto mr-2"> Hardware Division
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -395,14 +421,12 @@
                     <div id="panel-logistics"
                         class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
                         <div
-                            class="h-full flex flex-col justify-center items-center text-center p-8 bg-gray-50 rounded-xl border border-dashed border-gray-200">
-                            <div
-                                class="h-16 w-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-innscor-blue text-2xl">
-                                <i class="fas fa-truck-moving"></i>
-                            </div>
+                            class="h-full flex flex-col justify-center items-center text-center p-8 bg-gray-50 rounded-xl border border-dashed border-gray-200 hover:border-innscor-yellow transition-colors group">
+                            <img src="/brands/onsetprumac.jpg"
+                                class="h-24 w-auto object-contain mb-6 mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity">
                             <h3 class="font-bold text-xl text-gray-800">Onset Transport</h3>
-                            <p class="text-xs font-bold text-innscor-yellow uppercase tracking-widest mb-3">Prumac
-                                Connect</p>
+                            <p class="text-xs font-bold text-innscor-blue uppercase tracking-widest mb-3">Prumac Connect
+                            </p>
                             <p class="text-sm text-gray-500 max-w-xs">Connecting our diverse operations with reliable
                                 internal and external logistics solutions.</p>
                         </div>
@@ -413,22 +437,19 @@
                         class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
                         <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Creative & Branding
                         </h4>
-                        <div class="grid grid-cols-2 gap-8">
-                            <div class="text-center group">
-                                <div
-                                    class="h-32 bg-purple-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-purple-100 transition-colors">
-                                    <span class="font-bold text-2xl text-purple-900">M+</span>
-                                </div>
+                        <div class="grid grid-cols-2 gap-8 h-3/4">
+                            <div
+                                class="flex flex-col items-center justify-center p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all group bg-white">
+                                <img src="/brands/mountplus.png" class="h-20 w-auto object-contain mb-4 transition-all">
                                 <h3 class="font-bold text-gray-800">Mount Plus</h3>
-                                <p class="text-[10px] text-gray-500">Brand Strategy & Print</p>
+                                <p class="text-[10px] text-gray-500 mt-1">Brand Strategy & Print</p>
                             </div>
-                            <div class="text-center group">
-                                <div
-                                    class="h-32 bg-orange-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-orange-100 transition-colors">
-                                    <span class="font-bold text-2xl text-orange-900">Ni</span>
-                                </div>
+                            <div
+                                class="flex flex-col items-center justify-center p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all group bg-white">
+                                <img src="/brands/newimpetus.png"
+                                    class="h-20 w-auto object-contain mb-4 transition-all">
                                 <h3 class="font-bold text-gray-800">New Impetus</h3>
-                                <p class="text-[10px] text-gray-500">Design & Marketing</p>
+                                <p class="text-[10px] text-gray-500 mt-1">Design & Marketing</p>
                             </div>
                         </div>
                     </div>
@@ -555,29 +576,42 @@
             <div id="hero-canvas" class="absolute inset-0 z-0"></div>
 
             <div class="hero-video-bg opacity-40">
-                <iframe
-                    src="https://player.vimeo.com/video/1086900469?background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
-                    frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                <iframe src="https://vimeo.com/1158748750?fl=pl&fe=cm" frameborder="0" allow="autoplay; fullscreen"
+                    allowfullscreen></iframe>
             </div>
-            <div class="hero-content text-center items-center reveal relative z-10 flex flex-col justify-center h-full">
-                <!-- Ghost Border Container -->
-                <div
-                    class="border border-white/30 p-12 md:p-16 max-w-5xl mx-auto relative backdrop-blur-sm bg-black/20">
-                    <h1
-                        class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white uppercase tracking-wider font-montserrat">
-                        TARAND INVESTMENTS</h1>
-                    <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-white font-light leading-relaxed">
-                        A diversified holding company driving Zimbabwe's industrial evolution through Energy,
-                        Agriculture, and Manufacturing.
+            <div
+                class="hero-content relative z-10 flex flex-col justify-center items-center h-full pointer-events-none">
+                <!-- Outline Frame: Thin border, no fill, large rounded corners, centered -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div class="w-[90%] md:w-[85%] h-[70vh] md:h-[75vh]
+           border border-white/30
+           rounded-[48px] md:rounded-[72px]">
+                    </div>
+                </div>
+                <div id="hero-text-layer"
+                    class="absolute inset-0 flex items-center justify-center text-center pointer-events-none">
+                    <div id="hero-text-container" class="transition-opacity duration-700 opacity-100">
+                        <p id="hero-line" class="text-white text-xl md:text-2xl uppercase tracking-[0.3em] font-medium">
+                            TARAND INVESTMENTS
+                        </p>
+                    </div>
+                </div>
+
+                <div id="hero-text-container"
+                    class="text-center px-4 transition-opacity duration-1000 ease-in-out opacity-100 max-w-5xl mx-auto">
+                    <h1 id="hero-title"
+                        class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 uppercase tracking-wider font-montserrat leading-tight drop-shadow-md">
+                        TARAND INVESTMENTS
+                    </h1>
+                    <p id="hero-subtitle"
+                        class="text-lg md:text-2xl text-white/90 font-light tracking-wide max-w-4xl mx-auto leading-relaxed drop-shadow-sm">
+                        A diversified holding company shaping Zimbabwe’s industrial future.
                     </p>
-                    <a href="#"
-                        class="inline-flex items-center bg-white/10 hover:bg-white/20 border-2 border-white text-white px-8 py-3 rounded-full uppercase tracking-widest text-xs font-bold transition-all group">
-                        Discover the Group <i class="fas fa-play ml-3 text-[10px]"></i>
-                    </a>
                 </div>
             </div>
+            </div>
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer">
-                <i class="fas fa-chevron-down text-white text-3xl"></i>
+                <i class="fas fa-chevron-down text-white/50 text-xl"></i>
             </div>
         </section>
 
@@ -1266,6 +1300,40 @@
 
     <script src="src/webgl_organism.js"></script>
     <script src="src/main.js"></script>
+
+    <!-- Hero HUD Frame Rotation Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const messages = [
+                "TARAND INVESTMENTS",
+                "ENERGY · AGRICULTURE · MINING",
+                "PASSION FOR VALUE CREATION"
+            ];
+
+            let index = 0;
+            const textEl = document.getElementById('hero-rotating-text');
+
+            // Start loop after initial pause
+            setTimeout(cycleText, 4000);
+
+            function cycleText() {
+                // Fade Out
+                textEl.style.opacity = '0';
+
+                setTimeout(() => {
+                    // Update Text
+                    index = (index + 1) % messages.length;
+                    textEl.textContent = messages[index];
+
+                    // Fade In
+                    textEl.style.opacity = '1';
+
+                    // Next Cycle
+                    setTimeout(cycleText, 4000);
+                }, 1000); // Wait for fade out
+            }
+        });
+    </script>
 </body>
 
 </html>

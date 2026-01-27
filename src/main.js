@@ -24,16 +24,16 @@ function initSectorHoverBar() {
     // Show Function
     const showBar = () => {
         clearTimeout(closeTimeout);
-        hoverBar.classList.remove('opacity-0', 'invisible', 'translate-y-4');
-        hoverBar.classList.add('opacity-100', 'visible', 'translate-y-0');
+        hoverBar.classList.remove('opacity-0', 'invisible', 'translate-y-4', 'pointer-events-none');
+        hoverBar.classList.add('opacity-100', 'visible', 'translate-y-0', 'pointer-events-auto');
     };
 
     // Hide Function (with safety delay)
     const hideBar = () => {
         closeTimeout = setTimeout(() => {
             if (!isHoveringLink && !isHoveringBar) {
-                hoverBar.classList.add('opacity-0', 'invisible', 'translate-y-4');
-                hoverBar.classList.remove('opacity-100', 'visible', 'translate-y-0');
+                hoverBar.classList.add('opacity-0', 'invisible', 'translate-y-4', 'pointer-events-none');
+                hoverBar.classList.remove('opacity-100', 'visible', 'translate-y-0', 'pointer-events-auto');
             }
         }, 150);
     };
