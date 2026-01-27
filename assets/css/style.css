@@ -85,6 +85,27 @@ body {
     box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15);
 }
 
+/* Navigation Refinements */
+.nav-item {
+    white-space: nowrap;
+}
+
+.contact-cta {
+    border: 1px solid rgba(6, 32, 93, 0.2);
+    padding: 8px 20px;
+    border-radius: 9999px;
+    /* Ensure it vertically aligns with others */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.contact-cta:hover {
+    border-color: #06205D;
+    background-color: rgba(6, 32, 93, 0.05);
+}
+
 /* Ensure no transparency bleed */
 .sector-hover-bar {
     box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.15);

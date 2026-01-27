@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innscor Africa Limited – Manufacturer of consumer staple and durable goods</title>
-    <!-- Three.js for "Living Organism" Innovation Layer -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
@@ -113,9 +112,9 @@
             </div>
 
             <!-- Center: Primary Actions (Dark Text) -->
-            <div class="nav-center absolute left-1/2 -translate-x-1/2 hidden md:flex items-center space-x-12">
+            <div class="nav-center absolute left-1/2 -translate-x-1/2 hidden md:flex items-center space-x-8">
                 <a href="#who-we-are"
-                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group">
+                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group whitespace-nowrap">
                     Who We Are
                     <span
                         class="absolute -bottom-2 left-0 w-0 h-[2px] bg-innscor-yellow transition-all duration-300 group-hover:w-full"></span>
@@ -124,7 +123,7 @@
                 <!-- Sector Dropdown Parent -->
                 <div class="relative group" id="sector-nav-parent">
                     <a href="#sectors" id="link-sectors"
-                        class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors flex items-center py-6">
+                        class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors flex items-center py-6 whitespace-nowrap">
                         Sectors <i
                             class="fas fa-chevron-down ml-2 text-[10px] text-gray-400 group-hover:text-innscor-yellow transition-colors"></i>
                     </a>
@@ -133,24 +132,22 @@
                 </div>
 
                 <a href="#company-websites"
-                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group">
-                    Company Websites
+                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group whitespace-nowrap">
+                    Companies
                     <span
                         class="absolute -bottom-2 left-0 w-0 h-[2px] bg-innscor-yellow transition-all duration-300 group-hover:w-full"></span>
                 </a>
 
                 <a href="#news"
-                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group">
+                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group whitespace-nowrap">
                     News
                     <span
                         class="absolute -bottom-2 left-0 w-0 h-[2px] bg-innscor-yellow transition-all duration-300 group-hover:w-full"></span>
                 </a>
 
                 <a href="#contact"
-                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group">
-                    Contact Us
-                    <span
-                        class="absolute -bottom-2 left-0 w-0 h-[2px] bg-innscor-yellow transition-all duration-300 group-hover:w-full"></span>
+                    class="nav-item contact-cta text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue transition-all relative group whitespace-nowrap">
+                    Contact
                 </a>
             </div>
 
@@ -580,15 +577,18 @@
     <main>
         <!-- Mirror Hero Section -->
         <section class="hero-wrapper relative h-screen">
-            <!-- WebGL Container Injection -->
-            <div id="hero-canvas" class="absolute inset-0 z-0"></div>
+            <!-- 1. Local Video Background (z-0) -->
+            <video class="absolute inset-0 w-full h-full object-cover z-0" autoplay muted loop playsinline>
+                <source src="tryvideo.mp4" type="video/mp4" />
+            </video>
 
-            <div class="hero-video-bg opacity-40">
-                <iframe src="https://vimeo.com/1158748750?fl=pl&fe=cm" frameborder="0" allow="autoplay; fullscreen"
-                    allowfullscreen></iframe>
-            </div>
+            <!-- 2. Dark Overlay (z-10) -->
+            <div class="absolute inset-0 bg-black/40 z-10"></div>
+
+
+
             <div
-                class="hero-content relative z-10 flex flex-col justify-center items-center h-full pointer-events-none">
+                class="hero-content relative z-20 flex flex-col justify-center items-center h-full pointer-events-none">
                 <!-- Outline Frame: Thin border, no fill, large rounded corners, centered -->
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div class="w-[90%] md:w-[85%] h-[70vh] md:h-[75vh]
@@ -596,26 +596,7 @@
            rounded-[48px] md:rounded-[72px]">
                     </div>
                 </div>
-                <div id="hero-text-layer"
-                    class="absolute inset-0 flex items-center justify-center text-center pointer-events-none">
-                    <div id="hero-text-container" class="transition-opacity duration-700 opacity-100">
-                        <p id="hero-line" class="text-white text-xl md:text-2xl uppercase tracking-[0.3em] font-medium">
-                            TARAND INVESTMENTS
-                        </p>
-                    </div>
-                </div>
 
-                <div id="hero-text-container"
-                    class="text-center px-4 transition-opacity duration-1000 ease-in-out opacity-100 max-w-5xl mx-auto">
-                    <h1 id="hero-title"
-                        class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 uppercase tracking-wider font-montserrat leading-tight drop-shadow-md">
-                        TARAND INVESTMENTS
-                    </h1>
-                    <p id="hero-subtitle"
-                        class="text-lg md:text-2xl text-white/90 font-light tracking-wide max-w-4xl mx-auto leading-relaxed drop-shadow-sm">
-                        A diversified holding company shaping Zimbabwe’s industrial future.
-                    </p>
-                </div>
             </div>
             </div>
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer">
@@ -1306,7 +1287,7 @@
         </div>
     </footer>
 
-    <script src="src/webgl_organism.js"></script>
+
     <script src="src/main.js"></script>
 
     <!-- Hero HUD Frame Rotation Logic -->
