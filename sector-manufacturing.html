@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing & Food Production | Tarand Investments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'innscor-blue': '#06205D',
+                        'innscor-text': '#32383F',
+                        'innscor-yellow': '#F9B41B',
+                        'tarand-primary': '#06205D',
+                        'tarand-secondary': '#F9B41B',
+                        'mfg-gold': '#D4AF37', // Wheat/Gold for Bakery
+                        'mfg-green': '#4A7c59', // Green for Foods/Processing
+                        'mfg-red': '#8B0000', // Deep red for Butcheries accent
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+                    },
+                    backgroundImage: {
+                        'tarand-gradient': 'linear-gradient(90deg, #2ab672 0%, #1f77b3 50%, #241d53 100%)',
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .split-panel {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .split-panel:hover {
+            flex: 2;
+        }
+    </style>
+</head>
+
+<body class="font-montserrat text-innscor-text bg-gray-50">
+
+    <!-- Header (Condensed Version) -->
+    <header class="fixed w-full z-50 bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/header_logo.png" alt="Tarand Logo" class="h-10 md:h-12">
+                <span
+                    class="ml-4 text-xs md:text-sm font-bold text-gray-400 border-l border-gray-300 pl-4 tracking-widest uppercase">
+                    Manufacturing & Food
+                </span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <a href="index.html"
+                    class="text-sm font-bold text-innscor-blue hover:text-innscor-yellow uppercase tracking-wider hidden md:block">
+                    <i class="fas fa-th-large mr-2"></i> Group Overview
+                </a>
+                <button class="text-innscor-blue text-2xl"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="min-h-[80vh] relative flex items-center justify-center overflow-hidden bg-[#2C1A0B]">
+            <!-- Placeholder Video/Pattern -->
+            <div class="absolute inset-0 bg-[url('assets/sector_manufacturing.png')] bg-cover bg-center opacity-40">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#2C1A0B] via-transparent to-transparent"></div>
+
+            <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+                <span
+                    class="inline-block py-1 px-3 border border-mfg-gold text-mfg-gold text-xs font-bold uppercase tracking-[0.2em] mb-6 rounded-full">
+                    Sector 02
+                </span>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+                    Feeding The <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-mfg-gold to-white">
+                        Nation Daily
+                    </span>
+                </h1>
+                <p class="text-gray-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+                    From field to fork, we ensure food security through world-class milling, baking, and meat processing
+                    facilities.
+                </p>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 animate-bounce">
+                <i class="fas fa-chevron-down text-white/50 text-2xl"></i>
+            </div>
+        </section>
+
+        <!-- The Manufacturing Split Visualization -->
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 mb-16 text-center">
+                <h2 class="text-3xl font-bold text-innscor-blue mb-4">Value Addition At Scale</h2>
+                <div class="w-16 h-1 bg-mfg-gold mx-auto"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row h-[600px] w-full relative">
+
+                <!-- Bakery & Confectionery -->
+                <div
+                    class="split-panel flex-1 bg-orange-900 relative group overflow-hidden border-r border-white/10 cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-[url('assets/subsidiary_bakery.png')] bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700 md:bg-[position:left_center]">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#2C1A0B]/90"></div>
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <i class="fas fa-bread-slice text-4xl text-mfg-gold mb-4"></i>
+                        <h3 class="text-3xl font-bold text-white mb-2">Bakery</h3>
+                        <p class="text-gray-400 text-sm mb-6 max-w-xs">Producing thousands of loaves and confectioneries
+                            daily for the mass market.</p>
+
+                        <ul
+                            class="space-y-2 mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            <li class="flex items-center text-white text-sm"><span
+                                    class="w-2 h-2 bg-mfg-gold rounded-full mr-3"></span> Granite Haven Bakery</li>
+                        </ul>
+
+                        <a href="#subsidiaries"
+                            class="inline-flex items-center text-white font-bold border-b border-mfg-gold pb-1 hover:text-mfg-gold transition-colors">
+                            View Products <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Milling & Processing -->
+                <div class="split-panel flex-1 bg-green-900 relative group overflow-hidden cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-[url('assets/subsidiary_foods.png')] bg-cover bg-center opacity-40 grayscale group-hover:grayscale-0 transition-all duration-700 md:bg-[position:right_center]">
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a3f29]/90"></div>
+
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <i class="fas fa-seedling text-4xl text-mfg-green mb-4"></i>
+                        <h3 class="text-3xl font-bold text-white mb-2">Milling & Meat</h3>
+                        <p class="text-gray-400 text-sm mb-6 max-w-xs leading-snug">Primary agro-processing and protein
+                            production.</p>
+
+                        <ul
+                            class="space-y-2 mb-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                            <li class="flex items-center text-white text-sm"><span
+                                    class="w-2 h-2 bg-mfg-green rounded-full mr-3"></span> Ecomatt Foods</li>
+                            <li class="flex items-center text-white text-sm"><span
+                                    class="w-2 h-2 bg-mfg-green rounded-full mr-3"></span> Ecomatt Butcheries</li>
+                        </ul>
+
+                        <a href="#subsidiaries"
+                            class="inline-flex items-center text-white font-bold border-b border-mfg-green pb-1 hover:text-mfg-green transition-colors">
+                            Explore Processing <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Quality & Safety Standards (Replacing ESG) -->
+        <section class="py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="md:w-1/2">
+                        <span class="text-mfg-gold font-bold uppercase tracking-widest text-xs mb-4 block">Quality
+                            Assurance</span>
+                        <h2 class="text-4xl font-bold text-innscor-blue mb-6">World-Class Standards</h2>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            Safety and quality are the bedrock of our food production. Our facilities operate under
+                            strict
+                            hygiene protocols, ensuring that every product leaving our factory floor is safe,
+                            nutritious, and compliant with international standards.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 mt-8">
+                            <div class="p-6 bg-white shadow-sm border-l-4 border-mfg-gold">
+                                <span class="block text-3xl font-bold text-innscor-blue mb-1">ISO</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">Certified Processes</span>
+                            </div>
+                            <div class="p-6 bg-white shadow-sm border-l-4 border-mfg-green">
+                                <span class="block text-3xl font-bold text-innscor-blue mb-1">24/7</span>
+                                <span class="text-xs text-gray-500 uppercase tracking-wider">Quality Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 relative">
+                        <!-- Visual Placeholder for Quality Cycle -->
+                        <div class="relative bg-white p-8 rounded-xl shadow-xl z-10 border border-gray-100">
+                            <div class="flex justify-between items-center mb-6">
+                                <h4 class="font-bold text-innscor-blue">Production Cycle</h4>
+                                <span class="text-green-500 text-xs font-bold bg-green-50 px-2 py-1 rounded">Live
+                                    Status: OPTIMAL</span>
+                            </div>
+                            <!-- Mock Diagram -->
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold">
+                                        1</div>
+                                    <div class="h-1 bg-gray-100 flex-1 mx-2"></div>
+                                    <span class="text-sm font-semibold text-gray-600">Sourcing</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold">
+                                        2</div>
+                                    <div class="h-1 bg-gray-100 flex-1 mx-2"></div>
+                                    <span class="text-sm font-semibold text-gray-600">Processing</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold">
+                                        3</div>
+                                    <div class="h-1 bg-gray-100 flex-1 mx-2"></div>
+                                    <span class="text-sm font-semibold text-gray-600">Lab Testing</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-mfg-gold text-white flex items-center justify-center text-xs font-bold">
+                                        4</div>
+                                    <div class="h-1 bg-gray-100 flex-1 mx-2"></div>
+                                    <span class="text-sm font-bold text-innscor-blue">Distribution</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-mfg-gold/10 rounded-full blur-3xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subsidiaries Grid (Detailed) -->
+        <section id="subsidiaries" class="py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold text-innscor-blue">Our Manufacturing Brands</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Granite Haven Bakery -->
+                    <div
+                        class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                        <div class="h-48 bg-gray-200 relative overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-[url('assets/subsidiary_bakery.png')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700">
+                            </div>
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors">
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-innscor-blue mb-2">Granite Haven Bakery</h3>
+                            <p class="text-sm text-gray-500 mb-6 line-clamp-3">
+                                Commercial bakery delivering fresh bread, pies, and confectionery to retail outlets
+                                daily. Known for quality and consistency.
+                            </p>
+                            <a href="#"
+                                class="inline-block text-mfg-gold font-bold text-sm uppercase tracking-wider hover:underline">View
+                                Products</a>
+                        </div>
+                    </div>
+
+                    <!-- Ecomatt Foods -->
+                    <div
+                        class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                        <div class="h-48 bg-gray-200 relative overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-[url('assets/subsidiary_foods.png')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700">
+                            </div>
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors">
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-innscor-blue mb-2">Ecomatt Foods</h3>
+                            <p class="text-sm text-gray-500 mb-6 line-clamp-3">
+                                Makers of premium roller meal and maize products. Our milling operations support food
+                                security with affordable staples.
+                            </p>
+                            <a href="#"
+                                class="inline-block text-mfg-green font-bold text-sm uppercase tracking-wider hover:underline">View
+                                Profile</a>
+                        </div>
+                    </div>
+
+                    <!-- Ecomatt Butcheries -->
+                    <div
+                        class="group bg-white border border-gray-100 rounded-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                        <div class="h-48 bg-gray-200 relative overflow-hidden">
+                            <div
+                                class="absolute inset-0 bg-[url('assets/subsidiary_butcheries.png')] bg-cover bg-center opacity-80 group-hover:scale-105 transition-transform duration-700">
+                            </div>
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors">
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold text-innscor-blue mb-2">Ecomatt Butcheries</h3>
+                            <p class="text-sm text-gray-500 mb-6 line-clamp-3">
+                                Hygienic processing and distribution of high-quality beef, pork, and poultry products.
+                            </p>
+                            <a href="#"
+                                class="inline-block text-mfg-red font-bold text-sm uppercase tracking-wider hover:underline">View
+                                Cuts</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Simplified Copy) -->
+    <footer class="bg-tarand-gradient text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h4 class="font-bold text-lg mb-4">Tarand Investments</h4>
+            <p class="text-white/60 text-sm mb-8">Integrated Annual Report System 2026</p>
+            <a href="index.html" class="text-white hover:text-innscor-yellow text-sm font-semibold">Back to Home</a>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Simple entrance animations
+        gsap.from(".split-panel", {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            stagger: 0.2,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: ".split-panel",
+                start: "top 80%"
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -48,219 +48,502 @@
             }
         }
     </script>
+    <style>
+        /* Fallback for Hero Video */
+        .hero-wrapper {
+            background-image: url('assets/mill-bake-bg-4.webp');
+            /* Fallback Image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Ticker Mask */
+        .mask-linear-fade {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        /* --- NUCLEAR VERTICAL RESET (Footer Fix) --- */
+        @media (max-width: 767px) {
+
+            .site-footer-two__middle .row,
+            .site-footer-two__middle .row>div,
+            .footer-widget-two__column,
+            .footer-widget-two__working-box,
+            .footer-widget-two__instagram {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                flex: none !important;
+                margin-bottom: 30px !important;
+            }
+
+            .footer-widget-two__newsletter-form {
+                display: block !important;
+            }
+
+            .footer-widget-two__newsletter-form input,
+            .footer-widget-two__newsletter-form button {
+                width: 100% !important;
+                display: block !important;
+                margin: 0 0 15px 0 !important;
+                border-radius: 5px !important;
+            }
+        }
+    </style>
 </head>
 
 <body class="font-montserrat">
-    <!-- Navigation Overlay -->
-    <div class="menu-overlay" id="menu-overlay"></div>
+    <!-- ================================================================= -->
+    <!-- COMMAND INTERFACE NAVIGATION (STATE MACHINE DRIVEN) -->
+    <!-- ================================================================= -->
 
-    <!-- Off-canvas Navigation (Mirroring Elementor Pro Drawer) -->
-    <nav id="off-canvas-nav" class="bg-white text-innscor-text shadow-2xl transition-all duration-500">
-        <div class="p-10">
-            <div class="flex justify-between items-center mb-12">
-                <img src="assets/header_logo.png" alt="Logo" class="h-10">
-                <button id="close-menu"
-                    class="text-3xl text-innscor-blue hover:text-innscor-yellow transition-colors"><i
-                        class="fas fa-times"></i></button>
+    <!-- 1. Primary Command Bar (White Floating Control Bar) -->
+    <div class="fixed top-0 left-0 w-full z-[100] px-6 py-4 pointer-events-none display-flex justify-center">
+        <nav id="command-nav"
+            class="pointer-events-auto w-full max-w-7xl mx-auto bg-white rounded-2xl shadow-lg flex justify-between items-center px-8 h-20 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative"
+            data-state="idle">
+
+            <!-- Left: Full Identity -->
+            <div class="nav-left flex items-center">
+                <a href="#" class="block">
+                    <img src="assets/header_logo.png" alt="Tarand Investments"
+                        class="h-10 md:h-12 w-auto object-contain transition-transform hover:scale-105 duration-300">
+                </a>
             </div>
-            <ul class="space-y-4">
-                <li class="border-b border-gray-100 pb-4">
-                    <button class="flex justify-between items-center w-full text-lg font-semibold text-innscor-blue">
-                        About Innscor Africa <i class="fas fa-chevron-right text-xs"></i>
-                    </button>
-                </li>
-                <li class="border-b border-gray-100 pb-4">
-                    <button class="flex justify-between items-center w-full text-lg font-semibold text-innscor-blue">
-                        Our Business <i class="fas fa-chevron-right text-xs"></i>
-                    </button>
-                </li>
-                <li class="border-b border-gray-100 pb-4"><a href="#"
-                        class="text-lg font-semibold text-innscor-blue hover:text-innscor-yellow transition-colors">Investors</a>
-                </li>
-                <li class="border-b border-gray-100 pb-4"><a href="#"
-                        class="text-lg font-semibold text-innscor-blue hover:text-innscor-yellow transition-colors">Media</a>
-                </li>
-                <li class="border-b border-gray-100 pb-4"><a href="#"
-                        class="text-lg font-semibold text-innscor-blue hover:text-innscor-yellow transition-colors">Careers</a>
-                </li>
-                <li class="border-b border-gray-100 pb-4"><a href="#"
-                        class="text-lg font-semibold text-innscor-blue hover:text-innscor-yellow transition-colors">Sustainability</a>
-                </li>
-                <li><a href="#"
-                        class="text-lg font-semibold text-innscor-blue hover:text-innscor-yellow transition-colors">Contact
-                        Us</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <!-- High-Fidelity Header Section -->
-    <header id="main-header" class="fixed w-full z-100 transition-all font-montserrat">
-        <!-- Top Tier: Utility Bar -->
-        <div class="header-top-tier py-3 bg-tarand-gradient overflow-hidden relative">
-            <div
-                class="container mx-auto px-6 flex justify-between items-center text-[10px] uppercase tracking-widest text-white/90">
+            <!-- Center: Primary Actions (Dark Text) -->
+            <div class="nav-center absolute left-1/2 -translate-x-1/2 hidden md:flex items-center space-x-12">
+                <a href="#who-we-are"
+                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group">
+                    Who We Are
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-[2px] bg-innscor-yellow transition-all duration-300 group-hover:w-full"></span>
+                </a>
 
-                <!-- Ticker Container -->
-                <div class="flex-1 mr-10 relative h-4 overflow-hidden mask-linear-fade group">
-                    <div
-                        class="absolute whitespace-nowrap animate-ticker font-mono flex items-center space-x-12 group-hover:[animation-play-state:paused]">
-                        <span><span class="text-white/60 mr-2">Energy Generated:</span> <span
-                                class="text-white font-bold">250 MW</span> <i
-                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
-                        <span><span class="text-white/60 mr-2">Gold Output:</span> <span
-                                class="text-white font-bold">1,420 OZ</span> <i
-                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
-                        <span><span class="text-white/60 mr-2">Maize Milled:</span> <span
-                                class="text-white font-bold">45,000 TONS</span> <i
-                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
-                        <span><span class="text-white/60 mr-2">Retail Volume:</span> <span
-                                class="text-white font-bold">8.2M UNITS</span> <i
-                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
-                        <span><span class="text-white/60 mr-2">Safety Hours:</span> <span
-                                class="text-white font-bold">1.2M LTI-FREE</span> <i
-                                class="fas fa-caret-up text-tarand-green ml-1"></i></span>
-                        <!-- Duplicate for Loop Buffer -->
-                        <span><span class="text-white/60 mr-2">Energy Generated:</span> <span
-                                class="text-white font-bold">250 MW</span></span>
+                <!-- Sector Dropdown Parent -->
+                <div class="relative group" id="sector-nav-parent">
+                    <a href="#sectors" id="link-sectors"
+                        class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors flex items-center py-6">
+                        Sectors <i
+                            class="fas fa-chevron-down ml-2 text-[10px] text-gray-400 group-hover:text-innscor-yellow transition-colors"></i>
+                    </a>
+                    <span
+                        class="absolute bottom-4 left-0 w-0 h-[2px] bg-innscor-yellow transition-all duration-300 group-hover:w-full"></span>
+                </div>
+
+                <a href="#investors"
+                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group">
+                    Investors
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-[2px] bg-innscor-yellow transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#media"
+                    class="nav-item text-xs font-bold tracking-[0.1em] uppercase text-innscor-blue hover:text-innscor-yellow transition-colors relative group">
+                    Media
+                    <span
+                        class="absolute -bottom-2 left-0 w-0 h-[2px] bg-innscor-yellow transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+
+            <!-- Right: Tools (Dark Icons) -->
+            <div class="nav-right flex items-center space-x-6">
+                <button id="cmd-search-trigger" class="text-innscor-blue hover:text-innscor-yellow transition-colors">
+                    <i class="fas fa-search text-lg"></i>
+                </button>
+                <button id="cmd-menu-trigger" class="menu-btn group focus:outline-none">
+                    <div class="flex flex-col space-y-1.5 items-end">
+                        <span
+                            class="block w-6 h-[2px] bg-innscor-blue transition-all duration-300 group-hover:w-8 group-hover:bg-innscor-yellow"></span>
+                        <span
+                            class="block w-4 h-[2px] bg-innscor-blue transition-all duration-300 group-hover:w-8 group-hover:bg-innscor-yellow"></span>
+                        <span
+                            class="block w-6 h-[2px] bg-innscor-blue transition-all duration-300 group-hover:w-8 group-hover:bg-innscor-yellow"></span>
                     </div>
+                </button>
+            </div>
+
+            <!-- 4. MEGA HOVER BAR (Direct Child of Nav Container) -->
+            <div id="mega-hover-bar"
+                class="sector-hover-bar absolute top-[70px] left-0 w-full min-w-[900px] bg-white rounded-b-2xl shadow-xl overflow-hidden opacity-0 invisible transition-all duration-300 transform translate-y-4 z-50 flex border-t border-gray-100">
+
+                <!-- Left Column: Sector List (7 Sectors) -->
+                <div class="w-1/3 bg-gray-50 p-6 border-r border-gray-100 flex flex-col justify-center">
+                    <ul class="space-y-1">
+                        <li>
+                            <button
+                                class="sector-trigger w-full text-left px-4 py-3 rounded-lg text-sm font-bold text-gray-800 hover:bg-white hover:text-innscor-yellow hover:shadow-sm transition-all flex justify-between items-center active"
+                                data-target="panel-energy">
+                                Energy & Power
+                                <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="sector-trigger w-full text-left px-4 py-3 rounded-lg text-sm font-bold text-gray-600 hover:bg-white hover:text-innscor-yellow hover:shadow-sm transition-all flex justify-between items-center"
+                                data-target="panel-agro">
+                                Manufacturing & Food
+                                <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="sector-trigger w-full text-left px-4 py-3 rounded-lg text-sm font-bold text-gray-600 hover:bg-white hover:text-innscor-yellow hover:shadow-sm transition-all flex justify-between items-center"
+                                data-target="panel-agriculture">
+                                Agriculture
+                                <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="sector-trigger w-full text-left px-4 py-3 rounded-lg text-sm font-bold text-gray-600 hover:bg-white hover:text-innscor-yellow hover:shadow-sm transition-all flex justify-between items-center"
+                                data-target="panel-mining">
+                                Mining & Heavy Industry
+                                <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="sector-trigger w-full text-left px-4 py-3 rounded-lg text-sm font-bold text-gray-600 hover:bg-white hover:text-innscor-yellow hover:shadow-sm transition-all flex justify-between items-center"
+                                data-target="panel-retail">
+                                Retail & Wholesale
+                                <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="sector-trigger w-full text-left px-4 py-3 rounded-lg text-sm font-bold text-gray-600 hover:bg-white hover:text-innscor-yellow hover:shadow-sm transition-all flex justify-between items-center"
+                                data-target="panel-logistics">
+                                Logistics & Supply Chain
+                                <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                class="sector-trigger w-full text-left px-4 py-3 rounded-lg text-sm font-bold text-gray-600 hover:bg-white hover:text-innscor-yellow hover:shadow-sm transition-all flex justify-between items-center"
+                                data-target="panel-creative">
+                                Creative Services
+                                <i class="fas fa-chevron-right text-[10px] opacity-30"></i>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Right Side Utility -->
-                <div class="flex items-center space-x-6 z-10 bg-inherit pl-4">
-                    <div class="relative hidden md:block">
-                        <input type="text"
-                            class="w-48 bg-white/10 border border-white/20 rounded py-1 px-3 focus:outline-none focus:bg-white/20 text-white text-[10px]"
-                            placeholder="SEARCH...">
-                        <i
-                            class="fas fa-search absolute right-2 top-1/2 -translate-y-1/2 text-white/50 text-[10px]"></i>
+                <!-- Right Column: Dynamic Content -->
+                <div class="w-2/3 p-8 relative min-h-[400px]">
+
+                    <!-- 1. Energy Panel -->
+                    <div id="panel-energy"
+                        class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-100 visible">
+                        <div class="flex justify-between items-end mb-6">
+                            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest">Energy Portfolio</h4>
+                            <span class="text-[10px] font-mono text-gray-300">EST. 2020</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <!-- Flora Solar -->
+                            <a href="flora-solar.html"
+                                class="group block p-4 rounded-xl border border-gray-100 hover:border-innscor-yellow hover:bg-gray-50 transition-all">
+                                <div
+                                    class="h-8 w-8 rounded bg-yellow-100 flex items-center justify-center mb-3 text-yellow-600">
+                                    <i class="fas fa-solar-panel"></i></div>
+                                <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Flora Solar &
+                                    Tech</h3>
+                                <p class="text-[10px] text-gray-500 mt-1">Solar energy solutions & installations</p>
+                            </a>
+                            <!-- Global Energies -->
+                            <div
+                                class="group block p-4 rounded-xl border border-gray-100 hover:border-innscor-yellow hover:bg-gray-50 transition-all">
+                                <div
+                                    class="h-8 w-8 rounded bg-gray-100 flex items-center justify-center mb-3 text-gray-600">
+                                    <i class="fas fa-gas-pump"></i></div>
+                                <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Global
+                                    Energies</h3>
+                                <p class="text-[10px] text-gray-500 mt-1">Industrial fuel distribution</p>
+                            </div>
+                            <!-- Flora Gas -->
+                            <div
+                                class="group block p-4 rounded-xl border border-gray-100 hover:border-innscor-yellow hover:bg-gray-50 transition-all">
+                                <div
+                                    class="h-8 w-8 rounded bg-blue-100 flex items-center justify-center mb-3 text-blue-600">
+                                    <i class="fas fa-burn"></i></div>
+                                <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Flora Gas</h3>
+                                <p class="text-[10px] text-gray-500 mt-1">LPG & industrial gas supply</p>
+                            </div>
+                            <!-- Sector Image -->
+                            <div class="rounded-xl overflow-hidden relative h-full min-h-[100px]">
+                                <img src="assets/sector_energy.png"
+                                    class="absolute inset-0 w-full h-full object-cover opacity-80" alt="Energy">
+                            </div>
+                        </div>
                     </div>
-                    <a href="#" class="hover:text-white transition-colors">TARAND.vx</a>
-                </div>
-            </div>
-        </div>
 
-        <!-- Middle Tier: Logo -->
-        <div class="header-logo-tier py-6 bg-white shadow-sm transition-all duration-300">
-            <div class="container mx-auto px-6 flex justify-between items-center">
-                <div class="logo">
-                    <a href="#"><img src="assets/header_logo.png" alt="Tarand Logo"
-                            class="h-12 md:h-16 transition-all duration-300"></a>
-                </div>
-                <button id="open-menu" class="lg:hidden text-innscor-blue text-2xl"><i class="fas fa-bars"></i></button>
-            </div>
-        </div>
-
-        <!-- Bottom Tier: Primary Nav (Sticky) -->
-        <nav class="header-nav-bar bg-tarand-gradient border-b border-white/10 hidden lg:block shadow-md">
-            <div class="container mx-auto px-6 relative">
-                <ul
-                    class="flex items-center space-x-8 justify-center text-[13px] font-semibold text-white uppercase tracking-wider">
-                    <li class="relative group">
-                        <a href="#"
-                            class="nav-link active py-4 px-4 block hover:text-innscor-yellow transition-colors">Home</a>
-                    </li>
-                    <li class="relative group">
-                        <a href="#"
-                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors flex items-center">
-                            Who We Are <i class="fas fa-chevron-down ml-2 text-[10px]"></i>
-                        </a>
-                    </li>
-                    <li class="group static has-mega-menu">
-                        <a href="#"
-                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors flex items-center">
-                            Our Sectors <i class="fas fa-chevron-down ml-2 text-[10px]"></i>
-                        </a>
-                        <!-- Mega Menu Container -->
-                        <!-- Bento Grid Mega Menu Container -->
-                        <div
-                            class="mega-menu-container absolute left-0 right-0 top-full bg-white/95 backdrop-blur-xl shadow-2xl rounded-b-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 text-innscor-text overflow-hidden border-t-4 border-innscor-yellow">
-                            <div class="container mx-auto p-8">
-                                <div class="grid grid-cols-1 md:grid-cols-5 md:grid-rows-2 gap-4 h-auto md:h-[450px]">
-
-                                    <!-- Energy (Large Tile - 2x2) -->
-                                    <a href="#"
-                                        class="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl bg-[#0F6DB4] hover:shadow-2xl transition-all">
-                                        <div
-                                            class="absolute inset-0 bg-[url('assets/sector_energy.png')] bg-cover bg-center opacity-60 group-hover:scale-110 transition-transform duration-700">
-                                        </div>
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
-                                        </div>
-                                        <div class="absolute bottom-6 left-6 z-10">
-                                            <i class="fas fa-bolt text-innscor-yellow text-3xl mb-3"></i>
-                                            <h3 class="text-white text-3xl font-bold">Energy & Power</h3>
-                                            <p
-                                                class="text-gray-300 text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
-                                                Global Energies, Flora Gas, Flora Solar</p>
-                                        </div>
-                                    </a>
-
-                                    <!-- Food & Agro (Medium Tile) -->
-                                    <a href="#sector-agro"
-                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-[#2CB67D] hover:shadow-xl transition-all p-6 flex flex-col justify-between h-[180px] md:h-auto">
-                                        <div
-                                            class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors">
-                                        </div>
-                                        <i class="fas fa-bread-slice text-white text-xl"></i>
-                                        <h3 class="text-white text-lg font-bold relative z-10">Food & Agro</h3>
-                                    </a>
-
-                                    <!-- Mining (Medium Tile) -->
-                                    <a href="#sector-mining"
-                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-[#25215A] hover:shadow-xl transition-all p-6 flex flex-col justify-between h-[180px] md:h-auto">
-                                        <div
-                                            class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors">
-                                        </div>
-                                        <i class="fas fa-gem text-innscor-yellow text-xl"></i>
-                                        <h3 class="text-white text-lg font-bold relative z-10">Mining</h3>
-                                    </a>
-
-                                    <!-- Agriculture (Medium Tile - NEW) -->
-                                    <a href="#sector-agriculture"
-                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-[#2FAF6E] hover:shadow-xl transition-all p-6 flex flex-col justify-between h-[180px] md:h-auto">
-                                        <div
-                                            class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors">
-                                        </div>
-                                        <i class="fas fa-tractor text-white text-xl"></i>
-                                        <h3 class="text-white text-lg font-bold relative z-10">Agriculture</h3>
-                                    </a>
-
-                                    <!-- Retail (Small Tile) -->
-                                    <a href="#sector-retail"
-                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all p-6 flex flex-col justify-end border border-gray-100 h-[150px] md:h-auto">
-                                        <i class="fas fa-shopping-cart text-[#0F6DB4] text-xl mb-2"></i>
-                                        <h3 class="text-[#0F6DB4] font-bold leading-tight">Retail</h3>
-                                    </a>
-
-                                    <!-- Logistics (Small Tile) -->
-                                    <a href="#sector-logistics"
-                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all p-6 flex flex-col justify-end border border-gray-100 h-[150px] md:h-auto">
-                                        <i class="fas fa-truck text-[#0F6DB4] text-xl mb-2"></i>
-                                        <h3 class="text-[#0F6DB4] font-bold leading-tight">Logistics</h3>
-                                    </a>
-
-                                    <!-- Creative (Small Tile - NEW) -->
-                                    <a href="#sector-creative"
-                                        class="md:col-span-1 md:row-span-1 relative group overflow-hidden rounded-2xl bg-gray-50 hover:bg-gray-100 transition-all p-6 flex flex-col justify-end border border-gray-100 h-[150px] md:h-auto">
-                                        <i class="fas fa-paint-brush text-[#0F6DB4] text-xl mb-2"></i>
-                                        <h3 class="text-[#0F6DB4] font-bold leading-tight">Creative</h3>
-                                    </a>
-
+                    <!-- 2. Manufacturing (Agro) Panel -->
+                    <div id="panel-agro"
+                        class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Manufacturing
+                            Subsidiaries</h4>
+                        <div class="grid grid-cols-2 gap-6">
+                            <!-- Bakery -->
+                            <div class="flex items-center space-x-4 group cursor-pointer">
+                                <img src="assets/subsidiary_bakery.png"
+                                    class="h-16 w-16 object-cover rounded-lg shadow-sm group-hover:scale-105 transition-transform">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Granite
+                                        Haven Bakery</h3>
+                                    <p class="text-[10px] text-gray-500">Commercial bakery & confectionery</p>
+                                </div>
+                            </div>
+                            <!-- Foods -->
+                            <div class="flex items-center space-x-4 group cursor-pointer">
+                                <img src="assets/subsidiary_foods.png"
+                                    class="h-16 w-16 object-cover rounded-lg shadow-sm group-hover:scale-105 transition-transform">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Ecomatt
+                                        Foods</h3>
+                                    <p class="text-[10px] text-gray-500">Maize milling & processing</p>
+                                </div>
+                            </div>
+                            <!-- Butcheries -->
+                            <div class="flex items-center space-x-4 group cursor-pointer">
+                                <img src="assets/subsidiary_butcheries.png"
+                                    class="h-16 w-16 object-cover rounded-lg shadow-sm group-hover:scale-105 transition-transform">
+                                <div>
+                                    <h3 class="font-bold text-gray-800 text-sm group-hover:text-innscor-blue">Ecomatt
+                                        Butcheries</h3>
+                                    <p class="text-[10px] text-gray-500">Meat processing & retail</p>
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="relative group">
-                        <a href="#"
-                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors">Investors</a>
-                    </li>
-                    <li class="relative group">
-                        <a href="#"
-                            class="nav-link py-4 px-4 block hover:text-innscor-yellow transition-colors">Media</a>
-                    </li>
-                </ul>
+                    </div>
+
+                    <!-- 3. Agriculture Panel -->
+                    <div id="panel-agriculture"
+                        class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
+                        <div class="relative h-full rounded-xl overflow-hidden group">
+                            <img src="assets/sector_agriculture.png"
+                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-8">
+                                <h3 class="text-white font-bold text-2xl mb-2">Ecomatt Farm</h3>
+                                <p class="text-white/80 text-sm max-w-sm">Integrated farming operations including
+                                    piggery, poultry, horticulture, and crop production serving our internal supply
+                                    chain.</p>
+                                <button
+                                    class="mt-4 bg-innscor-yellow text-black text-xs font-bold px-4 py-2 rounded-full w-fit hover:bg-white transition-colors">Explore
+                                    Farm Operations</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Mining Panel -->
+                    <div id="panel-mining"
+                        class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Continental Treasures
+                        </h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div
+                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors">
+                                <h3 class="font-bold text-gray-800 text-sm">CT Mining</h3>
+                                <p class="text-[10px] text-gray-500">Primary gold extraction</p>
+                            </div>
+                            <div
+                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors">
+                                <h3 class="font-bold text-gray-800 text-sm">CT Trading</h3>
+                                <p class="text-[10px] text-gray-500">Mineral commodities trading</p>
+                            </div>
+                            <div
+                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors">
+                                <h3 class="font-bold text-gray-800 text-sm">CT Magazine</h3>
+                                <p class="text-[10px] text-gray-500">Explosives & mining services</p>
+                            </div>
+                            <div
+                                class="p-4 border border-gray-100 rounded-lg hover:border-innscor-yellow transition-colors bg-gray-50">
+                                <h3 class="font-bold text-gray-800 text-sm">Elite Dynamix</h3>
+                                <p class="text-[10px] text-gray-500">Engineering Infrastructure</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Retail Panel -->
+                    <div id="panel-retail"
+                        class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Granite Haven Retail
+                        </h4>
+                        <div class="space-y-3">
+                            <a href="#"
+                                class="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border-b border-gray-100">
+                                <span class="font-bold text-gray-700">Redcliff Branch</span>
+                                <span class="text-[10px] text-gray-400 uppercase tracking-widest">FMCG</span>
+                            </a>
+                            <a href="#"
+                                class="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border-b border-gray-100">
+                                <span class="font-bold text-gray-700">Colleenbawn Branch</span>
+                                <span class="text-[10px] text-gray-400 uppercase tracking-widest">FMCG</span>
+                            </a>
+                            <a href="#"
+                                class="flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border-b border-gray-100">
+                                <span class="font-bold text-gray-700">Granite Haven Hardware</span>
+                                <span class="text-[10px] text-gray-400 uppercase tracking-widest">Materials</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 6. Logistics Panel -->
+                    <div id="panel-logistics"
+                        class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
+                        <div
+                            class="h-full flex flex-col justify-center items-center text-center p-8 bg-gray-50 rounded-xl border border-dashed border-gray-200">
+                            <div
+                                class="h-16 w-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-innscor-blue text-2xl">
+                                <i class="fas fa-truck-moving"></i>
+                            </div>
+                            <h3 class="font-bold text-xl text-gray-800">Onset Transport</h3>
+                            <p class="text-xs font-bold text-innscor-yellow uppercase tracking-widest mb-3">Prumac
+                                Connect</p>
+                            <p class="text-sm text-gray-500 max-w-xs">Connecting our diverse operations with reliable
+                                internal and external logistics solutions.</p>
+                        </div>
+                    </div>
+
+                    <!-- 7. Creative Panel -->
+                    <div id="panel-creative"
+                        class="sector-panel absolute inset-0 p-8 transition-opacity duration-300 opacity-0 invisible">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-6">Creative & Branding
+                        </h4>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="text-center group">
+                                <div
+                                    class="h-32 bg-purple-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-purple-100 transition-colors">
+                                    <span class="font-bold text-2xl text-purple-900">M+</span>
+                                </div>
+                                <h3 class="font-bold text-gray-800">Mount Plus</h3>
+                                <p class="text-[10px] text-gray-500">Brand Strategy & Print</p>
+                            </div>
+                            <div class="text-center group">
+                                <div
+                                    class="h-32 bg-orange-50 rounded-lg flex items-center justify-center mb-3 group-hover:bg-orange-100 transition-colors">
+                                    <span class="font-bold text-2xl text-orange-900">Ni</span>
+                                </div>
+                                <h3 class="font-bold text-gray-800">New Impetus</h3>
+                                <p class="text-[10px] text-gray-500">Design & Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </nav>
-    </header>
+    </div>
+
+    <!-- 2. Status Ticker (Floating) -->
+    <div id="status-ticker"
+        class="fixed bottom-8 right-8 z-[90] font-mono text-[10px] text-white/50 pointer-events-none transition-opacity duration-500 hidden md:block">
+        <div
+            class="flex flex-col items-end space-y-1 text-right backdrop-blur-sm bg-black/20 p-2 border-l border-white/10">
+            <div class="flex items-center space-x-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                <span>SYSTEM: ONLINE</span>
+            </div>
+            <div class="opacity-70">PWR: <span id="ticker-pwr">250 MW</span></div>
+            <div class="opacity-70">AGRO: <span id="ticker-agro">45K T</span></div>
+            <div class="opacity-70">LTI: <span id="ticker-lti">1.2M HRS</span></div>
+        </div>
+    </div>
+
+    <!-- 3. Full Screen Command Menu (Bento Grid) -->
+    <div id="command-menu"
+        class="fixed inset-0 z-[200] bg-black/95 backdrop-blur-xl opacity-0 invisible transition-all duration-500 flex items-center justify-center p-4 md:p-12">
+
+        <!-- Background Network Effect (CSS) -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.03)_1px,_transparent_1px)] bg-[length:20px_20px] pointer-events-none">
+        </div>
+
+        <!-- Close Button -->
+        <button id="cmd-menu-close"
+            class="absolute top-8 right-8 text-white/50 hover:text-white text-4xl transition-colors focus:outline-none">
+            &times;
+        </button>
+
+        <!-- Bento Grid Container -->
+        <div
+            class="container max-w-7xl mx-auto h-full max-h-[800px] grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 overflow-y-auto md:overflow-visible">
+
+            <!-- 1. Main Navigation (Large) -->
+            <div
+                class="md:col-span-2 md:row-span-3 bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col justify-between hover:border-white/20 transition-colors group">
+                <div>
+                    <h3 class="text-white/40 uppercase tracking-widest text-xs font-bold mb-8">Navigation</h3>
+                    <ul class="space-y-4">
+                        <li><a href="#"
+                                class="text-3xl md:text-5xl font-bold text-white hover:text-innscor-yellow transition-colors block">Who
+                                We Are</a></li>
+                        <li><a href="#"
+                                class="text-3xl md:text-5xl font-bold text-white hover:text-innscor-yellow transition-colors block">Our
+                                Sectors</a></li>
+                        <li><a href="#"
+                                class="text-3xl md:text-5xl font-bold text-white hover:text-innscor-yellow transition-colors block">Investors</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-3xl md:text-5xl font-bold text-white hover:text-innscor-yellow transition-colors block">Media
+                                Center</a></li>
+                        <li><a href="#"
+                                class="text-3xl md:text-5xl font-bold text-white hover:text-innscor-yellow transition-colors block">Sustainability</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-3xl md:text-5xl font-bold text-white hover:text-innscor-yellow transition-colors block">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-8 flex space-x-4">
+                    <a href="#" class="text-white/60 hover:text-white text-sm"><i class="fab fa-linkedin"></i>
+                        LinkedIn</a>
+                    <a href="#" class="text-white/60 hover:text-white text-sm"><i class="fab fa-twitter"></i>
+                        Twitter</a>
+                </div>
+            </div>
+
+            <!-- 2. Featured Sector (Medium) -->
+            <a href="#sector-energy"
+                class="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden group border border-white/10">
+                <div
+                    class="absolute inset-0 bg-[url('assets/sector_energy.png')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8">
+                    <span class="text-innscor-yellow text-xs font-bold uppercase tracking-widest mb-2 block">Featured
+                        Sector</span>
+                    <h3 class="text-3xl font-bold text-white mb-2">Energy & Power</h3>
+                    <p class="text-gray-300 text-sm max-w-md">Leading the transition to sustainable energy
+                        infrastructure integration across Southern Africa.</p>
+                </div>
+            </a>
+
+            <!-- 3. Quick Links / Metrics (Small) -->
+            <div
+                class="md:col-span-1 md:row-span-1 bg-innscor-blue border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:bg-innscor-blue/80 transition-colors">
+                <span class="text-white/50 text-xs font-bold uppercase tracking-widest">Share Price</span>
+                <div>
+                    <div class="text-2xl font-bold text-white">125.40</div>
+                    <div class="text-green-400 text-xs font-mono">+1.2% (VFEX)</div>
+                </div>
+            </div>
+
+            <!-- 4. Quick Action (Small) -->
+            <a href="#"
+                class="md:col-span-1 md:row-span-1 bg-white border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:bg-gray-100 transition-colors group">
+                <span class="text-black/50 text-xs font-bold uppercase tracking-widest">Reports</span>
+                <div>
+                    <div
+                        class="text-black font-bold text-lg leading-tight group-hover:text-innscor-blue transition-colors">
+                        2025 Annual Report</div>
+                    <i
+                        class="fas fa-arrow-right text-black/50 mt-2 text-sm group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
+
+        </div>
+    </div>
 
     <main>
         <!-- Mirror Hero Section -->

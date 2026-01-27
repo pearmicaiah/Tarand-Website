@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Media | Tarand Investments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'innscor-blue': '#06205D',
+                        'innscor-text': '#32383F',
+                        'innscor-yellow': '#F9B41B',
+                        'tarand-primary': '#06205D',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'tarand-gradient': 'linear-gradient(90deg, #2ab672 0%, #1f77b3 50%, #241d53 100%)',
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-montserrat text-innscor-text bg-gray-50">
+
+    <!-- Header (Condensed) -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur shadow-sm transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/header_logo.png" alt="Tarand Logo" class="h-10 md:h-12">
+                <span
+                    class="ml-4 text-xs md:text-sm font-bold text-gray-400 border-l border-gray-300 pl-4 tracking-widest uppercase hidden sm:block">
+                    Knowledge Hub
+                </span>
+            </a>
+            <div class="flex items-center space-x-6">
+                <div class="relative hidden lg:block">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input type="text" placeholder="Search Annual Reports, Policies..."
+                        class="bg-gray-100 rounded-full py-2 pl-10 pr-4 text-sm w-64 focus:outline-none focus:ring-1 focus:ring-innscor-blue">
+                </div>
+                <button class="text-innscor-blue text-2xl"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+
+        <!-- Page Title -->
+        <section class="container mx-auto px-6 py-12">
+            <h1 class="text-4xl text-innscor-blue font-bold mb-4">Resources & Media Center</h1>
+            <p class="text-gray-500 max-w-2xl text-lg">
+                Access our financial reports, ESG documentation, and corporate branding assets.
+            </p>
+        </section>
+
+        <!-- Filters -->
+        <section class="border-b border-gray-200 bg-white sticky top-[72px] z-40">
+            <div class="container mx-auto px-6 overflow-x-auto">
+                <div class="flex space-x-8 py-4 whitespace-nowrap">
+                    <button class="text-innscor-blue font-bold border-b-2 border-innscor-blue pb-4 px-2 -mb-4.5">All
+                        Resources</button>
+                    <button
+                        class="text-gray-500 hover:text-innscor-blue font-semibold pb-4 px-2 transition-colors">Financial
+                        Reports</button>
+                    <button class="text-gray-500 hover:text-innscor-blue font-semibold pb-4 px-2 transition-colors">ESG
+                        & Policies</button>
+                    <button
+                        class="text-gray-500 hover:text-innscor-blue font-semibold pb-4 px-2 transition-colors">Press
+                        Kits</button>
+                    <button
+                        class="text-gray-500 hover:text-innscor-blue font-semibold pb-4 px-2 transition-colors">Presentations</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resource Grid -->
+        <section class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Card 1: Annual Report (Featured) -->
+                <div
+                    class="bg-white rounded-xl shadow-lg overflow-hidden flex flex-col group border border-gray-100 hover:border-innscor-blue/30 transition-all">
+                    <div class="h-48 bg-innscor-blue relative p-8 flex flex-col justify-between">
+                        <div class="absolute inset-0 bg-[url('assets/sector_mining.png')] bg-cover opacity-20"></div>
+                        <div class="relative z-10 flex justify-between items-start">
+                            <span
+                                class="bg-white/20 backdrop-blur text-white text-[10px] font-bold px-2 py-1 rounded">2026</span>
+                            <i class="far fa-file-pdf text-white text-2xl"></i>
+                        </div>
+                        <h3 class="relative z-10 text-white font-bold text-xl leading-tight mt-4">Integrated Annual
+                            Report</h3>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span
+                                class="text-xs font-bold text-innscor-blue uppercase tracking-wider mb-2 block">Financials</span>
+                            <p class="text-gray-500 text-sm mb-6">Comprehensive review of Tarand Investments'
+                                performance across Energy, Agriculture, and Mining sectors.</p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                            <span class="text-xs text-gray-400 font-mono">PDF • 12.5 MB</span>
+                            <a href="#" class="text-innscor-blue hover:text-innscor-yellow transition-colors"><i
+                                    class="fas fa-download"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: ESG Strategy -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col group border border-gray-100 hover:shadow-md transition-all">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <div
+                                class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <i class="fas fa-ellipsis-v text-gray-300"></i>
+                        </div>
+                        <h3
+                            class="font-bold text-innscor-text text-lg mb-2 group-hover:text-innscor-blue transition-colors">
+                            ESG Strategy Framework</h3>
+                        <p class="text-gray-500 text-sm mb-4">Our roadmap to net-zero operations and community impact
+                            initiatives.</p>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-between items-center bg-gray-50">
+                        <span class="text-xs text-gray-400 font-mono">PDF • 4.2 MB</span>
+                        <a href="#" class="text-sm font-bold text-innscor-blue uppercase">Download</a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Code of Conduct -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col group border border-gray-100 hover:shadow-md transition-all">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <div
+                                class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-gray-600">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <i class="fas fa-ellipsis-v text-gray-300"></i>
+                        </div>
+                        <h3
+                            class="font-bold text-innscor-text text-lg mb-2 group-hover:text-innscor-blue transition-colors">
+                            Group Code of Conduct</h3>
+                        <p class="text-gray-500 text-sm mb-4">Ethical guidelines and compliance standards for all
+                            subsidiaries.</p>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-between items-center bg-gray-50">
+                        <span class="text-xs text-gray-400 font-mono">PDF • 1.8 MB</span>
+                        <a href="#" class="text-sm font-bold text-innscor-blue uppercase">Download</a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Media Kit -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col group border border-gray-100 hover:shadow-md transition-all">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <i class="fas fa-ellipsis-v text-gray-300"></i>
+                        </div>
+                        <h3
+                            class="font-bold text-innscor-text text-lg mb-2 group-hover:text-innscor-blue transition-colors">
+                            Tarand Media Kit 2026</h3>
+                        <p class="text-gray-500 text-sm mb-4">High-resolution logos, executive headshots, and brand
+                            assets.</p>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-between items-center bg-gray-50">
+                        <span class="text-xs text-gray-400 font-mono">ZIP • 150 MB</span>
+                        <a href="#" class="text-sm font-bold text-innscor-blue uppercase">Download</a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Q3 Update -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col group border border-gray-100 hover:shadow-md transition-all">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <div
+                                class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <i class="fas fa-ellipsis-v text-gray-300"></i>
+                        </div>
+                        <h3
+                            class="font-bold text-innscor-text text-lg mb-2 group-hover:text-innscor-blue transition-colors">
+                            Q3 Trading Update</h3>
+                        <p class="text-gray-500 text-sm mb-4">Interim operational results and market outlook.</p>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-between items-center bg-gray-50">
+                        <span class="text-xs text-gray-400 font-mono">PDF • 0.8 MB</span>
+                        <a href="#" class="text-sm font-bold text-innscor-blue uppercase">Download</a>
+                    </div>
+                </div>
+
+                <!-- Card 6: Circulars -->
+                <div
+                    class="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col group border border-gray-100 hover:shadow-md transition-all">
+                    <div class="p-6 flex-1">
+                        <div class="flex justify-between items-start mb-4">
+                            <div
+                                class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center text-yellow-600">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <i class="fas fa-ellipsis-v text-gray-300"></i>
+                        </div>
+                        <h3
+                            class="font-bold text-innscor-text text-lg mb-2 group-hover:text-innscor-blue transition-colors">
+                            Shareholder Circulars</h3>
+                        <p class="text-gray-500 text-sm mb-4">Recent notices regarding dividend declarations and EGMs.
+                        </p>
+                    </div>
+                    <div
+                        class="px-6 py-4 bg-gray-50 border-t border-gray-100 flex justify-between items-center bg-gray-50">
+                        <span class="text-xs text-gray-400 font-mono">PDF • 1.2 MB</span>
+                        <a href="#" class="text-sm font-bold text-innscor-blue uppercase">Download</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer (Standard) -->
+    <footer class="bg-tarand-gradient text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h4 class="font-bold text-lg mb-4">Tarand Investments</h4>
+            <div class="flex justify-center space-x-6 mb-8 text-sm text-white/70">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="#" class="hover:text-white">Sectors</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+            <p class="text-white/40 text-xs">&copy; 2026 Tarand Investments. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -66,51 +66,114 @@ body {
 }
 
 /* Header & Tools */
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    mix-blend-mode: difference;
-    /* Ensures visibility on light/dark backgrounds */
+/* Command Interface Styles */
+#command-nav {
+    background-color: #ffffff !important;
+    backdrop-filter: none;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+    transform-origin: top center;
 }
 
-.logo {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
+#command-nav[data-state="idle"] {
+    height: 80px;
 }
 
-.innovation-tools {
-    display: flex;
-    gap: 1.5rem;
+#command-nav[data-state="scrolled"] {
+    height: 64px;
+    margin-top: 10px;
+    /* Slight compression top margin if desired, or just height */
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15);
 }
 
-.tool-btn {
-    background: transparent;
-    border: 1px solid var(--color-border);
-    color: var(--color-light);
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.3s var(--ease-smooth);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+/* Ensure no transparency bleed */
+.sector-hover-bar {
+    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.15);
+    transform-origin: top center;
 }
 
-.tool-btn:hover {
-    background: var(--color-light);
-    color: var(--color-dark);
+/* Active State for Sector Triggers */
+.sector-trigger.active {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    /* Soft shadow */
+    color: var(--theme-agro);
+    /* Or Tarand Color */
+}
+
+.sector-trigger.active i {
+    opacity: 1;
+    color: var(--theme-agro);
+}
+
+/* Panel Visibility */
+.sector-panel.opacity-100 {
+    pointer-events: auto;
+}
+
+.sector-panel.opacity-0 {
+    pointer-events: none;
+}
+
+/* Menu Open Override */
+#command-nav[data-state="menu-open"] {
+    background: transparent !important;
+    box-shadow: none;
+    color: white !important;
+}
+
+/* Invers colors for menu open */
+#command-nav[data-state="menu-open"] .nav-item,
+#command-nav[data-state="menu-open"] i,
+#command-nav[data-state="menu-open"] span.block {
+    color: white !important;
+    background-color: white !important;
+    /* For hamburger lines */
+}
+
+#command-nav[data-state="menu-open"] .logo-container img {
+    filter: brightness(0) invert(1);
+    opacity: 0.5;
+    /* Dim logo in menu mode */
+}
+
+/* Ticker Animations */
+@keyframes ticker-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+#status-ticker .animate-pulse {
+    animation: ticker-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Bento Grid Transitions */
+#command-menu {
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0.5s step-end;
+    /* Delay visibility hidden until opacity is 0 */
+}
+
+#command-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        visibility 0s step-start;
+}
+
+/* Sector Focus States */
+body[data-sector-context="energy"] #command-nav {
+    border-bottom-color: var(--theme-energy);
+}
+
+body[data-sector-context="agro"] #command-nav {
+    border-bottom-color: var(--theme-agro);
 }
 
 /* Menu Trigger (Mac Pro Grater Style) */
@@ -454,3 +517,6 @@ h1 {
         opacity: 1;
         color: var(--theme-energy);
     }
+}
+
+/* Closing brace for @media (max-width: 768px) or previous block */

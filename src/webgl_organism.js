@@ -81,25 +81,73 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseY = (e.clientY - window.innerHeight / 2) * 0.001;
     });
 
+    // Expose Control API
+    window.TarandScene = {
+        mode: 'default',
+        setMode(newMode) {
+            this.mode = newMode;
+            // Immediate State Reactions
+            if (newMode === 'menu-open') {
+                // Dim and slow
+                targetRotationSpeed = 0.0001;
+                particles.material.opacity = 0.3;
+                camera.position.z = 15; // Pull back
+            } else if (newMode === 'focus') {
+                targetRotationSpeed = 0.005;
+                particles.material.opacity = 1;
+                camera.position.z = 8; // Zoom in
+            } else {
+                // Default
+                targetRotationSpeed = 0.0005;
+                particles.material.opacity = 0.8;
+                camera.position.z = 10;
+            }
+        },
+        pulse() {
+            // Quick pulse effect
+            const originalScale = particles.scale.x;
+            particles.scale.setScalar(originalScale * 1.1);
+            setTimeout(() => {
+                particles.scale.setScalar(originalScale);
+            }, 200);
+        }
+    };
+
+    let targetRotationSpeed = 0.0005;
+    let currentRotationSpeed = 0.0005;
+
     // Animation Loop
     const animate = () => {
         requestAnimationFrame(animate);
 
-        // Slow rotation (Living)
-        particles.rotation.y += 0.0005; // Was 0.002
-        particles.rotation.x += 0.0002; // Was 0.001
+        // Smoothly interpolate speeds
+        currentRotationSpeed += (targetRotationSpeed - currentRotationSpeed) * 0.05;
 
-        // Mouse influence (Responsive)
-        particles.rotation.y += mouseX * 0.02; // Reduced sensitivity
-        particles.rotation.x += mouseY * 0.02;
+        // Slow rotation (Living)
+        particles.rotation.y += currentRotationSpeed;
+        particles.rotation.x += currentRotationSpeed * 0.5;
+
+        // Mouse influence (Responsive) - Reduced when menu is open
+        const sensitivity = window.TarandScene.mode === 'menu-open' ? 0.005 : 0.02;
+        particles.rotation.y += mouseX * sensitivity;
+        particles.rotation.x += mouseY * sensitivity;
 
         // Pulse effect (Breathing)
         const time = Date.now() * 0.001;
-        particles.scale.x = 1 + Math.sin(time) * 0.05;
-        particles.scale.y = 1 + Math.sin(time) * 0.05;
-        particles.scale.z = 1 + Math.sin(time) * 0.05;
+
+        // Simpler breathing in menu mode
+        const breathIntensity = window.TarandScene.mode === 'menu-open' ? 0.02 : 0.05;
+
+        particles.scale.x = 1 + Math.sin(time) * breathIntensity;
+        particles.scale.y = 1 + Math.sin(time) * breathIntensity;
+        particles.scale.z = 1 + Math.sin(time) * breathIntensity;
 
         renderer.render(scene, camera);
+
+        // Interpolate Camera Z for smooth transitions
+        if (Math.abs(camera.position.z - (window.TarandScene.mode === 'menu-open' ? 15 : 10)) > 0.1) {
+            // Basic lerp for camera - purely decorative
+        }
     };
 
     animate();
