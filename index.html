@@ -587,17 +587,110 @@
 
 
 
-            <div
-                class="hero-content relative z-20 flex flex-col justify-center items-center h-full pointer-events-none">
-                <!-- Outline Frame: Thin border, no fill, large rounded corners, centered -->
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div class="w-[90%] md:w-[85%] h-[70vh] md:h-[75vh]
-           border border-white/30
-           rounded-[48px] md:rounded-[72px]">
+            <div class="hero-content relative z-20 container mx-auto px-6 h-full flex flex-col justify-center">
+                <!-- Main Hero Text (Left Aligned) -->
+                <div class="max-w-3xl space-y-6 relative z-30 mt-20">
+                    <!-- Decorative Line -->
+                    <div class="w-20 h-1 bg-innscor-yellow mb-6 opacity-0 animate-fade-in"
+                        style="animation-delay: 100ms;"></div>
+
+                    <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight drop-shadow-lg opacity-0 animate-fade-in"
+                        style="animation-delay: 300ms;">
+                        Powering <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-innscor-yellow to-white">Zimbabwe's
+                            Growth</span>
+                    </h1>
+
+                    <p class="text-lg md:text-xl text-white/90 font-light max-w-xl leading-relaxed drop-shadow-md opacity-0 animate-fade-in"
+                        style="animation-delay: 500ms;">
+                        A diversified investment holding company driving sustainable value across Energy, Manufacturing,
+                        Agriculture, and Mining.
+                    </p>
+
+                    <div class="flex items-center space-x-4 pt-4 opacity-0 animate-fade-in"
+                        style="animation-delay: 700ms;">
+                        <a href="#sectors"
+                            class="px-8 py-4 bg-innscor-yellow text-innscor-blue font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-white transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Explore Sectors
+                        </a>
+                        <a href="#who-we-are"
+                            class="px-8 py-4 border border-white/30 text-white font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-white/10 backdrop-blur-sm transition-all">
+                            Our Vision
+                        </a>
                     </div>
                 </div>
 
-            </div>
+                <!-- Hero Slider / Sector Highlights (Bottom Right Absolute) -->
+                <div class="absolute bottom-32 right-6 md:right-12 w-full md:w-[400px] z-30 hidden md:block">
+                    <!-- Glass Container -->
+                    <div
+                        class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl shadow-2xl relative overflow-hidden group">
+
+                        <!-- Slider Content Wrapper -->
+                        <div id="hero-slider-track" class="relative h-[120px]">
+
+                            <!-- Slide 1: Energy -->
+                            <div class="hero-slide absolute inset-0 transition-all duration-700 ease-in-out opacity-100 translate-x-0"
+                                data-index="0">
+                                <div class="flex items-start justify-between mb-2">
+                                    <span class="text-innscor-yellow text-xs font-bold uppercase tracking-widest">Sector
+                                        Focus</span>
+                                    <i class="fas fa-bolt text-white/50 text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1">Energy & Power</h3>
+                                <p class="text-white/70 text-sm line-clamp-2">Leading the transition to sustainable
+                                    energy infrastructure with Flora Solar and Global Energies.</p>
+                            </div>
+
+                            <!-- Slide 2: Agriculture -->
+                            <div class="hero-slide absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-x-12"
+                                data-index="1">
+                                <div class="flex items-start justify-between mb-2">
+                                    <span class="text-innscor-yellow text-xs font-bold uppercase tracking-widest">Sector
+                                        Focus</span>
+                                    <i class="fas fa-seedling text-white/50 text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1">Agriculture</h3>
+                                <p class="text-white/70 text-sm line-clamp-2">Integrated farming operations ensuring
+                                    food security through Ecomatt Farm.</p>
+                            </div>
+
+                            <!-- Slide 3: Manufacturing -->
+                            <div class="hero-slide absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-x-12"
+                                data-index="2">
+                                <div class="flex items-start justify-between mb-2">
+                                    <span class="text-innscor-yellow text-xs font-bold uppercase tracking-widest">Sector
+                                        Focus</span>
+                                    <i class="fas fa-industry text-white/50 text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white mb-1">Manufacturing</h3>
+                                <p class="text-white/70 text-sm line-clamp-2">Value-added processing and production via
+                                    Granite Haven and Ecomatt Foods.</p>
+                            </div>
+
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="w-full h-1 bg-white/10 mt-4 rounded-full overflow-hidden">
+                            <div id="hero-slider-progress"
+                                class="h-full bg-innscor-yellow w-0 transition-all duration-[5000ms] ease-linear"></div>
+                        </div>
+
+                        <!-- Controls -->
+                        <div class="absolute bottom-6 right-6 flex space-x-2">
+                            <button id="hero-prev"
+                                class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:bg-white hover:text-innscor-blue transition-all">
+                                <i class="fas fa-chevron-left text-xs"></i>
+                            </button>
+                            <button id="hero-next"
+                                class="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:bg-white hover:text-innscor-blue transition-all">
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce cursor-pointer">
                 <i class="fas fa-chevron-down text-white/50 text-xl"></i>
@@ -1323,6 +1416,7 @@
             }
         });
     </script>
+    <script src="src/hero-slider.js"></script>
 </body>
 
 </html>
